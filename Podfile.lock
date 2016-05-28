@@ -1,0 +1,43 @@
+PODS:
+  - DynamicButton (1.8.0)
+  - Gifu (1.0.1)
+  - MonkeyKing (0.9.1)
+  - PNChart (0.8.8):
+    - UICountingLabel (~> 1.2.0)
+  - pop (1.0.9)
+  - REFormattedNumberField (1.1.6)
+  - RETableViewManager (1.6):
+    - REFormattedNumberField (~> 1.1.5)
+    - REValidation (~> 0.1.4)
+  - REValidation (0.1.4)
+  - SnapKit (0.19.1)
+  - SQLite.swift (0.10.1)
+  - UICountingLabel (1.2.0)
+  - YYText (1.0.3)
+
+DEPENDENCIES:
+  - DynamicButton (~> 1.8.0)
+  - Gifu
+  - MonkeyKing (~> 0.9.1)
+  - PNChart
+  - pop (~> 1.0)
+  - RETableViewManager (~> 1.6)
+  - SnapKit (~> 0.19.1)
+  - SQLite.swift (~> 0.10.1)
+  - YYText
+
+SPEC CHECKSUMS:
+  DynamicButton: a5b3d7a45564fe5679530b9025ef73f7e369e688
+  Gifu: bf7a99fe9f20a1dc18c3cb4289aebc922a2ad419
+  MonkeyKing: 84d0f711a0e20eb104616d0b393a74efd5d9d9ad
+  PNChart: 25f91e9c4688af49c3647489760624d037f5383f
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  REFormattedNumberField: 70fc5fb1218ebd5ee9983820defd12806d5c6ec6
+  RETableViewManager: 9667ecb29c005c32df40a1dd1828224840a351a2
+  REValidation: 38c4de1be58455f8b00aab208ac80db316a66b7f
+  SnapKit: eff58d6e3451bf2f482db2eccf86aecf371dc62d
+  SQLite.swift: 6a6e4b034efc317ce4e203b6af2d3024fee2b570
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
+  YYText: 3050159192035d7f232b537ce76668aac2e2bd8b
+
+COCOAPODS: 0.39.0

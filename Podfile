@@ -1,0 +1,11 @@
+platform :ios, '9.2'
+use_frameworks!
+pod 'SnapKit', '~> 0.19.1'
+pod 'YYText'
+pod 'MonkeyKing', '~> 0.9.1'
+pod 'pop', '~> 1.0'
+pod 'RETableViewManager', '~> 1.6'
+pod 'PNChart'
+pod 'SQLite.swift', '~> 0.10.1'
+pod 'Gifu'
+pod 'DynamicButton', '~> 1.8.0'

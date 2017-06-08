@@ -51,13 +51,13 @@ class MainPageCollectionViewCell: UICollectionViewCell {
     fileprivate func p_constructSubviews() {
         
         addSubview(kImageView)
-        kImageView.snp_makeConstraints() { (make) -> Void in
+        kImageView.snp.makeConstraints() { (make) -> Void in
             make.top.equalTo(self).offset(40)
             make.centerX.equalTo(self)
         }
         
         addSubview(kNameLabel)
-        kNameLabel.snp_makeConstraints() { (make) -> Void in
+        kNameLabel.snp.makeConstraints() { (make) -> Void in
             make.bottom.equalTo(self).offset(-30)
             make.centerX.equalTo(self)
         }

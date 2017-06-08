@@ -32,7 +32,7 @@ class AccountCollectionViewCell: UICollectionViewCell {
     //MARK: - Private Method
     fileprivate func p_constructSubviews() {
         addSubview(ktitleLabel)
-        ktitleLabel.snp_makeConstraints() { (make) -> Void in
+        ktitleLabel.snp.makeConstraints() { (make) -> Void in
             make.center.equalTo(self)
         }
         

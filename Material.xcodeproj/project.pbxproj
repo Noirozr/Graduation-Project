@@ -9,24 +9,13 @@
 /* Begin PBXBuildFile section */
 		1806F5E71CB070E300149D04 /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806F5E61CB070E300149D04 /* AccountCollectionViewCell.swift */; };
 		1806F5E91CB0710300149D04 /* AccountCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806F5E81CB0710300149D04 /* AccountCollectionViewLayout.swift */; };
-		1806F5EB1CB194D800149D04 /* DSPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806F5EA1CB194D800149D04 /* DSPViewController.swift */; };
-		1806F5ED1CB1CDC400149D04 /* AlgorithmCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806F5EC1CB1CDC400149D04 /* AlgorithmCollectionViewLayout.swift */; };
 		181AE3F21CA9ACE100BC02B8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AE3F11CA9ACE100BC02B8 /* AboutViewController.swift */; };
 		181AE3F41CA9C23800BC02B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181AE3F31CA9C23800BC02B8 /* Assets.xcassets */; };
 		183825521C96D9AD0083788F /* MainPageCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183825511C96D9AD0083788F /* MainPageCollectionViewFlowLayout.swift */; };
 		183825571C97EF910083788F /* MATConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183825561C97EF910083788F /* MATConstant.swift */; };
-		1838255A1C9806B00083788F /* DataStrcuturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183825591C9806B00083788F /* DataStrcuturesViewController.swift */; };
-		1838255E1C9807EF0083788F /* AlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838255D1C9807EF0083788F /* AlgorithmViewController.swift */; };
 		183825601C98080C0083788F /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838255F1C98080C0083788F /* AccountViewController.swift */; };
 		18663B561CADD156009AFC9A /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18663B551CADD156009AFC9A /* SQLite.framework */; };
-		1871B6701CAB2CBA00FEEC81 /* DataStructuresCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871B66F1CAB2CBA00FEEC81 /* DataStructuresCollectionViewCell.swift */; };
-		1871B6721CAB308100FEEC81 /* AlgorithmCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871B6711CAB308100FEEC81 /* AlgorithmCollectionViewCell.swift */; };
-		1871B6751CAC28A600FEEC81 /* DataStructuresCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871B6741CAC28A600FEEC81 /* DataStructuresCollectionViewFlowLayout.swift */; };
 		1871B6771CAC7BD200FEEC81 /* TPRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871B6761CAC7BD200FEEC81 /* TPRViewController.swift */; };
-		1874492D1CC1786B005F5602 /* ALAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874492C1CC1786B005F5602 /* ALAnimationViewController.swift */; };
-		187B81921CC297970068D336 /* ALImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B81911CC297970068D336 /* ALImageViewController.swift */; };
-		187B81941CC2979E0068D336 /* ALCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B81931CC2979E0068D336 /* ALCodeViewController.swift */; };
-		187B81981CC432A40068D336 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B81971CC432A40068D336 /* RateViewController.swift */; };
 		18818AF51CC7048D0069ABCE /* 0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 18818AF01CC7048D0069ABCE /* 0.gif */; };
 		18818AF61CC7048D0069ABCE /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 18818AF11CC7048D0069ABCE /* 1.gif */; };
 		18818AF71CC7048D0069ABCE /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 18818AF21CC7048D0069ABCE /* 2.gif */; };
@@ -54,12 +43,6 @@
 		18C009301CCFC2F2008F93C0 /* algorithm_2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 18C0092B1CCFC2F2008F93C0 /* algorithm_2.pdf */; };
 		18C009311CCFC2F2008F93C0 /* algorithm_3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 18C0092C1CCFC2F2008F93C0 /* algorithm_3.pdf */; };
 		18C009321CCFC2F2008F93C0 /* algorithm_4.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 18C0092D1CCFC2F2008F93C0 /* algorithm_4.pdf */; };
-		18C009341CCFC7B1008F93C0 /* DSDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C009331CCFC7B1008F93C0 /* DSDetailViewController.swift */; };
-		18C009361CCFCCC2008F93C0 /* DSAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C009351CCFCCC2008F93C0 /* DSAnimationViewController.swift */; };
-		18CCA85A1CB2F5CF00C7727C /* DSContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CCA8591CB2F5CF00C7727C /* DSContentViewController.swift */; };
-		18CCA85C1CB2F5D700C7727C /* ALCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CCA85B1CB2F5D700C7727C /* ALCViewController.swift */; };
-		18CCA85E1CB3140700C7727C /* ASPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CCA85D1CB3140700C7727C /* ASPViewController.swift */; };
-		18CCA8601CB3150B00C7727C /* TPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CCA85F1CB3150B00C7727C /* TPViewController.swift */; };
 		18CCA8641CB3FDE100C7727C /* MATDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 18CCA8611CB3F83300C7727C /* MATDB.sqlite */; };
 		18EDC9F01C84A70700EBF175 /* MainPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EDC9EF1C84A70700EBF175 /* MainPageCollectionViewCell.swift */; };
 		18EDC9F31C84A9A100EBF175 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EDC9F21C84A9A100EBF175 /* UIColorExtension.swift */; };
@@ -89,24 +72,13 @@
 		160952CA30E53EAA08CE63F3 /* Pods_Material.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Material.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1806F5E61CB070E300149D04 /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
 		1806F5E81CB0710300149D04 /* AccountCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewLayout.swift; sourceTree = "<group>"; };
-		1806F5EA1CB194D800149D04 /* DSPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSPViewController.swift; sourceTree = "<group>"; };
-		1806F5EC1CB1CDC400149D04 /* AlgorithmCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgorithmCollectionViewLayout.swift; sourceTree = "<group>"; };
 		181AE3F11CA9ACE100BC02B8 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		181AE3F31CA9C23800BC02B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		183825511C96D9AD0083788F /* MainPageCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		183825561C97EF910083788F /* MATConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MATConstant.swift; sourceTree = "<group>"; };
-		183825591C9806B00083788F /* DataStrcuturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStrcuturesViewController.swift; sourceTree = "<group>"; };
-		1838255D1C9807EF0083788F /* AlgorithmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgorithmViewController.swift; sourceTree = "<group>"; };
 		1838255F1C98080C0083788F /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		18663B551CADD156009AFC9A /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../Library/Developer/Xcode/DerivedData/Material-cwuxoffvkqcgypdpiopmbdsqvvns/Build/Products/Debug-iphoneos/SQLite.framework"; sourceTree = "<group>"; };
-		1871B66F1CAB2CBA00FEEC81 /* DataStructuresCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructuresCollectionViewCell.swift; sourceTree = "<group>"; };
-		1871B6711CAB308100FEEC81 /* AlgorithmCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgorithmCollectionViewCell.swift; sourceTree = "<group>"; };
-		1871B6741CAC28A600FEEC81 /* DataStructuresCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructuresCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		1871B6761CAC7BD200FEEC81 /* TPRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPRViewController.swift; sourceTree = "<group>"; };
-		1874492C1CC1786B005F5602 /* ALAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALAnimationViewController.swift; sourceTree = "<group>"; };
-		187B81911CC297970068D336 /* ALImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALImageViewController.swift; sourceTree = "<group>"; };
-		187B81931CC2979E0068D336 /* ALCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALCodeViewController.swift; sourceTree = "<group>"; };
-		187B81971CC432A40068D336 /* RateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 		18818AF01CC7048D0069ABCE /* 0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = 0.gif; path = gifs/0.gif; sourceTree = "<group>"; };
 		18818AF11CC7048D0069ABCE /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = 1.gif; path = gifs/1.gif; sourceTree = "<group>"; };
 		18818AF21CC7048D0069ABCE /* 2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = 2.gif; path = gifs/2.gif; sourceTree = "<group>"; };
@@ -140,12 +112,6 @@
 		18C0092B1CCFC2F2008F93C0 /* algorithm_2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = algorithm_2.pdf; sourceTree = "<group>"; };
 		18C0092C1CCFC2F2008F93C0 /* algorithm_3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = algorithm_3.pdf; sourceTree = "<group>"; };
 		18C0092D1CCFC2F2008F93C0 /* algorithm_4.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = algorithm_4.pdf; sourceTree = "<group>"; };
-		18C009331CCFC7B1008F93C0 /* DSDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSDetailViewController.swift; sourceTree = "<group>"; };
-		18C009351CCFCCC2008F93C0 /* DSAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSAnimationViewController.swift; sourceTree = "<group>"; };
-		18CCA8591CB2F5CF00C7727C /* DSContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSContentViewController.swift; sourceTree = "<group>"; };
-		18CCA85B1CB2F5D700C7727C /* ALCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALCViewController.swift; sourceTree = "<group>"; };
-		18CCA85D1CB3140700C7727C /* ASPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASPViewController.swift; sourceTree = "<group>"; };
-		18CCA85F1CB3150B00C7727C /* TPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPViewController.swift; sourceTree = "<group>"; };
 		18CCA8611CB3F83300C7727C /* MATDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MATDB.sqlite; sourceTree = "<group>"; };
 		18EDC9EF1C84A70700EBF175 /* MainPageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageCollectionViewCell.swift; sourceTree = "<group>"; };
 		18EDC9F21C84A9A100EBF175 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -193,44 +159,12 @@
 			path = config;
 			sourceTree = "<group>";
 		};
-		183825581C9806920083788F /* DataStructures */ = {
-			isa = PBXGroup;
-			children = (
-				183825591C9806B00083788F /* DataStrcuturesViewController.swift */,
-				1871B66F1CAB2CBA00FEEC81 /* DataStructuresCollectionViewCell.swift */,
-				1871B6741CAC28A600FEEC81 /* DataStructuresCollectionViewFlowLayout.swift */,
-				18CCA8591CB2F5CF00C7727C /* DSContentViewController.swift */,
-				18C009351CCFCCC2008F93C0 /* DSAnimationViewController.swift */,
-				18C009331CCFC7B1008F93C0 /* DSDetailViewController.swift */,
-			);
-			name = DataStructures;
-			path = DataStructs;
-			sourceTree = "<group>";
-		};
-		1838255B1C9807070083788F /* Algorithm */ = {
-			isa = PBXGroup;
-			children = (
-				1838255D1C9807EF0083788F /* AlgorithmViewController.swift */,
-				1871B6711CAB308100FEEC81 /* AlgorithmCollectionViewCell.swift */,
-				1806F5EC1CB1CDC400149D04 /* AlgorithmCollectionViewLayout.swift */,
-				18CCA85B1CB2F5D700C7727C /* ALCViewController.swift */,
-				187B81911CC297970068D336 /* ALImageViewController.swift */,
-				187B81931CC2979E0068D336 /* ALCodeViewController.swift */,
-				187B81971CC432A40068D336 /* RateViewController.swift */,
-				1874492C1CC1786B005F5602 /* ALAnimationViewController.swift */,
-			);
-			path = Algorithm;
-			sourceTree = "<group>";
-		};
 		1838255C1C9807120083788F /* Account */ = {
 			isa = PBXGroup;
 			children = (
 				1838255F1C98080C0083788F /* AccountViewController.swift */,
 				1806F5E61CB070E300149D04 /* AccountCollectionViewCell.swift */,
 				1806F5E81CB0710300149D04 /* AccountCollectionViewLayout.swift */,
-				1806F5EA1CB194D800149D04 /* DSPViewController.swift */,
-				18CCA85D1CB3140700C7727C /* ASPViewController.swift */,
-				18CCA85F1CB3150B00C7727C /* TPViewController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -314,8 +248,6 @@
 			children = (
 				1871B6731CAB328000FEEC81 /* TPR */,
 				1838255C1C9807120083788F /* Account */,
-				1838255B1C9807070083788F /* Algorithm */,
-				183825581C9806920083788F /* DataStructures */,
 				189389981C64A72100DEB455 /* Public */,
 				1893899B1C64AA0F00DEB455 /* MainPage */,
 			);
@@ -624,38 +556,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18C009341CCFC7B1008F93C0 /* DSDetailViewController.swift in Sources */,
-				1871B6751CAC28A600FEEC81 /* DataStructuresCollectionViewFlowLayout.swift in Sources */,
 				1893899F1C64AA8B00DEB455 /* MainPageViewController.swift in Sources */,
 				18EDC9F51C84A9F700EBF175 /* StringExtension.swift in Sources */,
 				183825601C98080C0083788F /* AccountViewController.swift in Sources */,
 				181AE3F21CA9ACE100BC02B8 /* AboutViewController.swift in Sources */,
-				18CCA85C1CB2F5D700C7727C /* ALCViewController.swift in Sources */,
-				1871B6721CAB308100FEEC81 /* AlgorithmCollectionViewCell.swift in Sources */,
 				183825521C96D9AD0083788F /* MainPageCollectionViewFlowLayout.swift in Sources */,
-				1874492D1CC1786B005F5602 /* ALAnimationViewController.swift in Sources */,
 				1893899D1C64AA5E00DEB455 /* MATBaseViewController.swift in Sources */,
-				18CCA85E1CB3140700C7727C /* ASPViewController.swift in Sources */,
-				1871B6701CAB2CBA00FEEC81 /* DataStructuresCollectionViewCell.swift in Sources */,
 				1893899A1C64A78200DEB455 /* MATNavigationViewController.swift in Sources */,
-				1838255A1C9806B00083788F /* DataStrcuturesViewController.swift in Sources */,
 				189069561C6210530052ECBD /* AppDelegate.swift in Sources */,
 				183825571C97EF910083788F /* MATConstant.swift in Sources */,
 				18EDC9F01C84A70700EBF175 /* MainPageCollectionViewCell.swift in Sources */,
 				18A53DFE1CA9989900083998 /* AccountKit.swift in Sources */,
 				18FAC1C41C9049A100BC4F46 /* UIViewExtension.swift in Sources */,
-				187B81921CC297970068D336 /* ALImageViewController.swift in Sources */,
-				1806F5EB1CB194D800149D04 /* DSPViewController.swift in Sources */,
-				18CCA85A1CB2F5CF00C7727C /* DSContentViewController.swift in Sources */,
-				18C009361CCFCCC2008F93C0 /* DSAnimationViewController.swift in Sources */,
 				1871B6771CAC7BD200FEEC81 /* TPRViewController.swift in Sources */,
-				187B81941CC2979E0068D336 /* ALCodeViewController.swift in Sources */,
-				1806F5ED1CB1CDC400149D04 /* AlgorithmCollectionViewLayout.swift in Sources */,
-				18CCA8601CB3150B00C7727C /* TPViewController.swift in Sources */,
 				1806F5E91CB0710300149D04 /* AccountCollectionViewLayout.swift in Sources */,
-				1838255E1C9807EF0083788F /* AlgorithmViewController.swift in Sources */,
 				1806F5E71CB070E300149D04 /* AccountCollectionViewCell.swift in Sources */,
-				187B81981CC432A40068D336 /* RateViewController.swift in Sources */,
 				18EDC9F31C84A9A100EBF175 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

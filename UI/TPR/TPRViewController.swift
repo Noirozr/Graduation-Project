@@ -30,7 +30,7 @@ class TPRViewController: MATBaseViewController {
         
         let algorithmView = UIView()
         self.view.addSubview(algorithmView)
-        algorithmView.snp_makeConstraints() { (make) -> Void in
+        algorithmView.snp.makeConstraints() { (make) -> Void in
             make.top.equalTo(self.view).offset(MATConstant.NavigationBarHeight + 10)
             make.leading.equalTo(self.view).offset(15)
             make.trailing.equalTo(self.view).offset(-15)
@@ -40,7 +40,7 @@ class TPRViewController: MATBaseViewController {
         
         let algorithmTitleLabel = YYLabel()
         algorithmView.addSubview(algorithmTitleLabel)
-        algorithmTitleLabel.snp_makeConstraints() { (make) -> Void in
+        algorithmTitleLabel.snp.makeConstraints() { (make) -> Void in
             make.top.equalTo(algorithmView)
             make.leading.equalTo(self.view).offset(15)
             make.trailing.equalTo(self.view).offset(-15)
@@ -51,8 +51,8 @@ class TPRViewController: MATBaseViewController {
         
         let algorithmIntroductionLabel = UILabel()
         algorithmView.addSubview(algorithmIntroductionLabel)
-        algorithmIntroductionLabel.snp_makeConstraints() { (make) -> Void in
-            make.top.equalTo(algorithmTitleLabel.snp_bottom)
+        algorithmIntroductionLabel.snp.makeConstraints() { (make) -> Void in
+            make.top.equalTo(algorithmTitleLabel.snp.bottom)
             make.leading.equalTo(algorithmTitleLabel)
             make.trailing.equalTo(algorithmTitleLabel)
             make.height.equalTo(85)
@@ -68,8 +68,8 @@ class TPRViewController: MATBaseViewController {
         
         let albiView = UIView()
         algorithmView.addSubview(albiView)
-        albiView.snp_makeConstraints() { (make) -> Void in
-            make.top.equalTo(algorithmIntroductionLabel.snp_bottom).offset(30)
+        albiView.snp.makeConstraints() { (make) -> Void in
+            make.top.equalTo(algorithmIntroductionLabel.snp.bottom).offset(30)
             make.leading.equalTo(algorithmTitleLabel).offset(15)
             make.trailing.equalTo(algorithmTitleLabel).offset(-15)
             make.height.equalTo(43)
@@ -77,7 +77,7 @@ class TPRViewController: MATBaseViewController {
         
         let albiLabel = UILabel()
         albiView.addSubview(albiLabel)
-        albiLabel.snp_makeConstraints() { (make) -> Void in
+        albiLabel.snp.makeConstraints() { (make) -> Void in
             make.centerX.equalTo(albiView)
             make.top.equalTo(albiView)
             make.height.equalTo(albiView)
@@ -94,8 +94,8 @@ class TPRViewController: MATBaseViewController {
         
         let alitunesuView = UIView()
         algorithmView.addSubview(alitunesuView)
-        alitunesuView.snp_makeConstraints() { (make) -> Void in
-            make.top.equalTo(albiView.snp_bottom).offset(5)
+        alitunesuView.snp.makeConstraints() { (make) -> Void in
+            make.top.equalTo(albiView.snp.bottom).offset(5)
             make.leading.equalTo(algorithmTitleLabel).offset(15)
             make.trailing.equalTo(algorithmTitleLabel).offset(-15)
             make.height.equalTo(43)
@@ -103,7 +103,7 @@ class TPRViewController: MATBaseViewController {
         
         let alitunesuLabel = UILabel()
         alitunesuView.addSubview(alitunesuLabel)
-        alitunesuLabel.snp_makeConstraints() { (make) -> Void in
+        alitunesuLabel.snp.makeConstraints() { (make) -> Void in
             make.centerX.equalTo(alitunesuView)
             make.top.equalTo(alitunesuView)
             make.height.equalTo(alitunesuView)
@@ -120,8 +120,8 @@ class TPRViewController: MATBaseViewController {
         
         let alNeteaseView = UIView()
         algorithmView.addSubview(alNeteaseView)
-        alNeteaseView.snp_makeConstraints() { (make) -> Void in
-            make.top.equalTo(alitunesuView.snp_bottom).offset(5)
+        alNeteaseView.snp.makeConstraints() { (make) -> Void in
+            make.top.equalTo(alitunesuView.snp.bottom).offset(5)
             make.leading.equalTo(algorithmTitleLabel).offset(15)
             make.trailing.equalTo(algorithmTitleLabel).offset(-15)
             make.height.equalTo(43)
@@ -129,7 +129,7 @@ class TPRViewController: MATBaseViewController {
         
         let alNeteaseLabel = UILabel()
         alNeteaseView.addSubview(alNeteaseLabel)
-        alNeteaseLabel.snp_makeConstraints() { (make) -> Void in
+        alNeteaseLabel.snp.makeConstraints() { (make) -> Void in
             make.centerX.equalTo(alNeteaseView)
             make.top.equalTo(alNeteaseView)
             make.height.equalTo(alNeteaseView)
@@ -146,8 +146,8 @@ class TPRViewController: MATBaseViewController {
         
         let DSView = UIView()
         self.view.addSubview(DSView)
-        DSView.snp_makeConstraints() { (make) -> Void in
-            make.top.equalTo(algorithmView.snp_bottom).offset(10)
+        DSView.snp.makeConstraints() { (make) -> Void in
+            make.top.equalTo(algorithmView.snp.bottom).offset(10)
             make.leading.equalTo(self.view).offset(15)
             make.trailing.equalTo(self.view).offset(-15)
             make.height.equalTo((scrHeight - MATConstant.NavigationBarHeight - 30)/2)
@@ -155,7 +155,7 @@ class TPRViewController: MATBaseViewController {
         
         let DSTitleLabel = YYLabel()
         DSView.addSubview(DSTitleLabel)
-        DSTitleLabel.snp_makeConstraints() { (make) -> Void in
+        DSTitleLabel.snp.makeConstraints() { (make) -> Void in
             make.top.equalTo(DSView)
             make.leading.equalTo(self.view).offset(15)
             make.trailing.equalTo(self.view).offset(-15)
@@ -164,8 +164,8 @@ class TPRViewController: MATBaseViewController {
         
         let DSIntroductionLabel = UILabel()
         DSView.addSubview(DSIntroductionLabel)
-        DSIntroductionLabel.snp_makeConstraints() { (make) -> Void in
-            make.top.equalTo(DSTitleLabel.snp_bottom)
+        DSIntroductionLabel.snp.makeConstraints() { (make) -> Void in
+            make.top.equalTo(DSTitleLabel.snp.bottom)
             make.leading.equalTo(DSTitleLabel)
             make.trailing.equalTo(DSTitleLabel)
             make.height.equalTo(70)
@@ -183,8 +183,8 @@ class TPRViewController: MATBaseViewController {
         
         let DSitunesuView = UIView()
         DSView.addSubview(DSitunesuView)
-        DSitunesuView.snp_makeConstraints() { (make) -> Void in
-            make.top.equalTo(DSIntroductionLabel.snp_bottom).offset(30)
+        DSitunesuView.snp.makeConstraints() { (make) -> Void in
+            make.top.equalTo(DSIntroductionLabel.snp.bottom).offset(30)
             make.leading.equalTo(DSIntroductionLabel).offset(15)
             make.trailing.equalTo(DSIntroductionLabel).offset(-15)
             make.height.equalTo(43)
@@ -192,7 +192,7 @@ class TPRViewController: MATBaseViewController {
         
         let DSitunesuLabel = UILabel()
         DSitunesuView.addSubview(DSitunesuLabel)
-        DSitunesuLabel.snp_makeConstraints() { (make) -> Void in
+        DSitunesuLabel.snp.makeConstraints() { (make) -> Void in
             make.centerX.equalTo(DSitunesuView)
             make.top.equalTo(DSitunesuView)
             make.height.equalTo(DSitunesuView)

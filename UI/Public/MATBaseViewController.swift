@@ -67,7 +67,7 @@ extension MATBaseViewController {
         // view hierarchy
         let tipMsgView = UIView()
         view.addSubview(tipMsgView)
-        tipMsgView.snp_makeConstraints { (make) -> Void in
+        tipMsgView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(self.view).offset(self.floatingTipMsgViewOffsetY)
             make.left.equalTo(self.view)
             make.right.equalTo(self.view)
@@ -77,14 +77,14 @@ extension MATBaseViewController {
         // -
         let textView = UIView()
         tipMsgView.addSubview(textView)
-        textView.snp_makeConstraints { (make) -> Void in
+        textView.snp.makeConstraints { (make) -> Void in
             make.edges.equalTo(tipMsgView)
         }
         
         // --
         let label = UILabel()
         textView.addSubview(label)
-        label.snp_makeConstraints { (make) -> Void in
+        label.snp.makeConstraints { (make) -> Void in
             make.edges.equalTo(textView).inset(UIEdgeInsetsMake(0, 20, 0, 20))
         }
         

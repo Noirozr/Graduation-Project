@@ -28,23 +28,23 @@ class AboutViewController: MATBaseViewController {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "icon")
         self.view.addSubview(imageView)
-        imageView.snp_makeConstraints() { (make) -> Void in
+        imageView.snp.makeConstraints() { (make) -> Void in
             make.centerX.equalTo(self.view)
             make.top.equalTo(self.view).offset(MATConstant.NavigationBarHeight + 60)
         }
         
         let rightLabel = UILabel()
         self.view.addSubview(rightLabel)
-        rightLabel.snp_makeConstraints() { (make) -> Void in
-            make.top.equalTo(imageView.snp_bottom).offset(15)
-            make.leading.equalTo(self.view).offset(15)
-            make.trailing.equalTo(self.view).offset(-15)
+        rightLabel.snp.makeConstraints() { (make) -> Void in
+            make.top.equalTo(imageView.snp.bottom).offset(15)
+            make.leading.equalTo(self.view).offset(30)
+            make.trailing.equalTo(self.view).offset(-30)
             make.centerX.equalTo(self.view)
         }
         
         let feedBackView = UIView()
         self.view.addSubview(feedBackView)
-        feedBackView.snp_makeConstraints() { (make) -> Void in
+        feedBackView.snp.makeConstraints() { (make) -> Void in
             make.bottom.equalTo(self.view).offset(-20)
             make.width.equalTo(self.view)
             make.height.equalTo(43)
@@ -52,7 +52,7 @@ class AboutViewController: MATBaseViewController {
         
         let feedBackLabel = UILabel()
         feedBackView.addSubview(feedBackLabel)
-        feedBackLabel.snp_makeConstraints() { (make) -> Void in
+        feedBackLabel.snp.makeConstraints() { (make) -> Void in
             make.centerX.equalTo(feedBackView)
             make.top.equalTo(feedBackView)
             make.height.equalTo(feedBackView)
@@ -60,21 +60,21 @@ class AboutViewController: MATBaseViewController {
         
         let shareView = UIView()
         self.view.addSubview(shareView)
-        shareView.snp_makeConstraints() { (make) -> Void in
-            make.bottom.equalTo(feedBackView.snp_top).offset(-10)
+        shareView.snp.makeConstraints() { (make) -> Void in
+            make.bottom.equalTo(feedBackView.snp.top).offset(-10)
             make.width.equalTo(self.view)
             make.height.equalTo(43)
         }
         
         let shareLabel = UILabel()
         shareView.addSubview(shareLabel)
-        shareLabel.snp_makeConstraints() { (make) -> Void in
+        shareLabel.snp.makeConstraints() { (make) -> Void in
             make.centerX.equalTo(shareView)
             make.top.equalTo(shareView)
             make.height.equalTo(shareView)
         }
         
-        rightLabel.text = "Copyright © Yongjia Liu. All rights reserved. \nThis application is provided for education purposes only, and is intended for personal, non-commercial use. Product specifications are subject to change without notice.\n  \n此应用程序仅供教育使用，适用于个人和非商业用途。产品规格如有变更，恕不告知。"
+        rightLabel.text = "Copyright © Yongjia Liu. All rights reserved. \nThis application is provided for education purposes only, and is intended for personal, non-commercial use. Product specifications are subject to change without notice.\n"
         rightLabel.numberOfLines = 0
         rightLabel.textColor = UIColor.black
         rightLabel.font = UIFont.systemFont(ofSize: 18)

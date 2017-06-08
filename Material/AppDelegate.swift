@@ -16,49 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        if let data: AnyObject = UserDefaults.standard.object(forKey: "DSP") as AnyObject {
-            
-            print("哈利路亚")
-            print(data)
-            
-        } else {
-            let dData = [0, 0, 0, 0, 0, 0, 0, 0]
-            UserDefaults.standard.set(dData, forKey: "DSP")
-        }
-        
-        if let data: AnyObject = UserDefaults.standard.object(forKey: "ASP") as AnyObject {
-            
-            print("哈利路亚 NI")
-            print(data)
-            
-        } else {
-            let aData = [0, 0, 0, 0, 0]
-            UserDefaults.standard.set(aData, forKey: "ASP")
-        }
-        
-        
-        
-        
-//        do {
-//            guard let path = NSBundle.mainBundle().pathForResource("MATDB", ofType: "sqlite") else {
-//                print("path wrong")
-//                return true
-//            }
-//            let db = try Connection(path)
-//            
-//            let ds = Table("Algorithm")
-//            let id = Expression<Int64>("ColumnId")
-//            let name = Expression<String?>("Name")
-//            
-//            for data in try db.prepare(ds) {
-//                print("id: \(data[id]), name: \(data[name])")
-//                // id: 1, name: Optional("Alice"), email: alice@mac.com
-//            }
-//
-//
-//        } catch {
-//           print(error)
-//        }
+
         return true
     }
 

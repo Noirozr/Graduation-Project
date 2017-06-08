@@ -47,7 +47,7 @@ class MainPageViewController: MATBaseViewController {
         
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         self.view.addSubview(collectionView)
-        collectionView.snp_makeConstraints() { (make) -> Void in
+        collectionView.snp.makeConstraints() { (make) -> Void in
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(MATConstant.NavigationBarHeight, 0, 0, 0))
         }
         collectionView.backgroundColor = UIColor.clear
@@ -80,12 +80,6 @@ extension MainPageViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
-        case 0:
-            let nextVC = DataStrcuturesViewController()
-            self.navigationController?.pushViewController(nextVC, animated: true)
-        case 1:
-            let nextVC = AlgorithmViewController()
-            self.navigationController?.pushViewController(nextVC, animated: true)
         case 2:
             let nextVC = AccountViewController()
             self.navigationController?.pushViewController(nextVC, animated: true)

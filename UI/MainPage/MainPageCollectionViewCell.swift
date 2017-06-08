@@ -19,12 +19,12 @@ struct MainPageCollectionViewCellData {
 class MainPageCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Private Properties
-    private let kNameLabel = UILabel()
-    private let kImageView = UIImageView()
+    fileprivate let kNameLabel = UILabel()
+    fileprivate let kImageView = UIImageView()
     
-    override var highlighted: Bool {
+    override var isHighlighted: Bool {
         didSet {
-            backgroundColor = backgroundColor?.colorWithAlphaComponent(highlighted ? 0.7 : 1.0)
+            backgroundColor = backgroundColor?.withAlphaComponent(isHighlighted ? 0.7 : 1.0)
         }
     }
     
@@ -41,14 +41,14 @@ class MainPageCollectionViewCell: UICollectionViewCell {
         p_constructSubviews()
     }
     //MARK: - Public Methods
-    func refreshContentByData(data: MainPageCollectionViewCellData) {
+    func refreshContentByData(_ data: MainPageCollectionViewCellData) {
         backgroundColor = data.backgroundColor
         kNameLabel.text = data.name
         kImageView.image = UIImage(named: data.iconName)
     }
 
     //MARK: - Private Methods
-    private func p_constructSubviews() {
+    fileprivate func p_constructSubviews() {
         
         addSubview(kImageView)
         kImageView.snp_makeConstraints() { (make) -> Void in
@@ -62,8 +62,8 @@ class MainPageCollectionViewCell: UICollectionViewCell {
             make.centerX.equalTo(self)
         }
         
-        kNameLabel.backgroundColor = UIColor.clearColor()
-        kNameLabel.textColor = UIColor.whiteColor()
+        kNameLabel.backgroundColor = UIColor.clear
+        kNameLabel.textColor = UIColor.white
         kNameLabel.font = UIFont(name: "Avenir", size: 20)
         
         self.layer.cornerRadius = 5

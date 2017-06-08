@@ -11,9 +11,9 @@ import PNChart
 
 class TPViewController: MATBaseViewController {
     
-    private var p_aValue = 0
-    private var p_dValue = 0
-    private var p_items: [PNPieChartDataItem] = []
+    fileprivate var p_aValue = 0
+    fileprivate var p_dValue = 0
+    fileprivate var p_items: [PNPieChartDataItem] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class TPViewController: MATBaseViewController {
     }
     
     //MARK: - Private Methods
-    private func p_constructSubviews() {
+    fileprivate func p_constructSubviews() {
         let titleLabel = UILabel()
         self.view.addSubview(titleLabel)
         titleLabel.snp_makeConstraints() { (make) -> Void in
@@ -39,13 +39,13 @@ class TPViewController: MATBaseViewController {
         }
         
         titleLabel.text = "Current Algorithm Learning Progress"
-        titleLabel.textAlignment = .Center
+        titleLabel.textAlignment = .center
         titleLabel.textColor = UIColor.fcb_colorWithHexString("2B76FD")
-        titleLabel.backgroundColor = UIColor.clearColor()
-        titleLabel.font = UIFont.systemFontOfSize(20)
+        titleLabel.backgroundColor = UIColor.clear
+        titleLabel.font = UIFont.systemFont(ofSize: 20)
         
-        guard let aData = NSUserDefaults.standardUserDefaults().objectForKey("ASP") as? [Int],
-                let dData = NSUserDefaults.standardUserDefaults().objectForKey("DSP") as? [Int] else {
+        guard let aData = UserDefaults.standard.object(forKey: "ASP") as? [Int],
+                let dData = UserDefaults.standard.object(forKey: "DSP") as? [Int] else {
             return
         }
         
@@ -70,16 +70,16 @@ class TPViewController: MATBaseViewController {
             self.p_items = [PNPieChartDataItem(value: CGFloat(p_aValue + p_dValue), color: UIColor.fcb_colorWithHexString("2B76FD"), description: "Current"),PNPieChartDataItem(value: CGFloat(rest), color: UIColor.fcb_colorWithHexString("96160B"), description: "Rest")]
         }
         
-        let pieChart = PNPieChart(frame: CGRectMake(0, 0, self.view.frame.size.width - 30, 200), items: self.p_items)
-        self.view.addSubview(pieChart)
-        pieChart.snp_makeConstraints() { (make) -> Void in
+        let pieChart = PNPieChart(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width - 30, height: 200), items: self.p_items)
+        self.view.addSubview(pieChart!)
+        pieChart?.snp_makeConstraints() { (make) -> Void in
             make.top.equalTo(titleLabel.snp_bottom).offset(MATConstant.NavigationBarHeight + 30)
             make.leading.equalTo(self.view).offset(15)
             make.trailing.equalTo(self.view).offset(-15)
             make.height.equalTo(200)
         }
-        pieChart.descriptionTextColor = UIColor.fcb_colorWithHexString("1A323E")
-        pieChart.descriptionTextFont = UIFont(name: "Avenir", size: 18)
-        pieChart.strokeChart()
+        pieChart?.descriptionTextColor = UIColor.fcb_colorWithHexString("1A323E")
+        pieChart?.descriptionTextFont = UIFont(name: "Avenir", size: 18)
+        pieChart?.stroke()
     }
 }

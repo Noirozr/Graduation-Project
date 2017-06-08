@@ -22,17 +22,17 @@ class MATBaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func addNavLeftBtnWithImageName(normalName: String, highlightedName: String?){
+    func addNavLeftBtnWithImageName(_ normalName: String, highlightedName: String?){
         navigationItem.leftBarButtonItem = p_createNavBtnItemWithImage(true, normalName: normalName, highlightedName: highlightedName)
     }
     
-    func addNavRightBtnWithImageName(normalName: String, highlightedName: String?){
+    func addNavRightBtnWithImageName(_ normalName: String, highlightedName: String?){
         navigationItem.rightBarButtonItem = p_createNavBtnItemWithImage(false, normalName: normalName, highlightedName: highlightedName)
     }
     
     // MARK: - Events
     func navLeftBtnClicked() {
-        navigationController?.popViewControllerAnimated(true)
+        navigationController?.popViewController(animated: true)
     }
     
     func navRightBtnClicked() {
@@ -40,15 +40,15 @@ class MATBaseViewController: UIViewController {
     }
     
     // MARK: Private Methods
-    private func p_createNavBtnItemWithImage(isLeft: Bool, normalName: String, highlightedName: String? = nil) -> UIBarButtonItem {
+    fileprivate func p_createNavBtnItemWithImage(_ isLeft: Bool, normalName: String, highlightedName: String? = nil) -> UIBarButtonItem {
         
-        let btn = UIButton(frame: CGRectMake(0, 0, 50, 44))
-        btn.contentHorizontalAlignment = isLeft ? .Left : .Right
-        btn.setImage(UIImage(named: normalName), forState: .Normal)
+        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 44))
+        btn.contentHorizontalAlignment = isLeft ? .left : .right
+        btn.setImage(UIImage(named: normalName), for: UIControlState())
         if highlightedName != nil {
-            btn.setImage(UIImage(named: highlightedName!), forState: UIControlState.Highlighted)
+            btn.setImage(UIImage(named: highlightedName!), for: UIControlState.highlighted)
         }
-        btn.addTarget(self, action: isLeft ? #selector(MATBaseViewController.navLeftBtnClicked) : #selector(MATBaseViewController.navRightBtnClicked), forControlEvents: .TouchUpInside)
+        btn.addTarget(self, action: isLeft ? #selector(MATBaseViewController.navLeftBtnClicked) : #selector(MATBaseViewController.navRightBtnClicked), for: .touchUpInside)
         
         return UIBarButtonItem(customView: btn)
     }
@@ -61,7 +61,7 @@ extension MATBaseViewController {
         return MATConstant.NavigationBarHeight
     }
     
-    func showFloatingTipMessage(msg: String) {
+    func showFloatingTipMessage(_ msg: String) {
         let tipViewHeight: CGFloat = 33
         
         // view hierarchy
@@ -94,10 +94,10 @@ extension MATBaseViewController {
         
         textView.backgroundColor = UIColor.fcb_colorWithHexString("2B79FB", alpha: 0.8)
         
-        label.backgroundColor = UIColor.clearColor()
-        label.textColor = UIColor.whiteColor()
-        label.textAlignment = .Center
-        label.font = UIFont.systemFontOfSize(13)
+        label.backgroundColor = UIColor.clear
+        label.textColor = UIColor.white
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 13)
         label.text = msg
         
         
@@ -105,17 +105,16 @@ extension MATBaseViewController {
         let showAnimation = CABasicAnimation(keyPath: "position.y")
         showAnimation.fromValue = -tipViewHeight
         showAnimation.toValue = 0
-        showAnimation.additive = true
+        showAnimation.isAdditive = true
         showAnimation.duration = 0.2
         showAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        textView.layer.addAnimation(showAnimation, forKey: "showAnimation")
+        textView.layer.add(showAnimation, forKey: "showAnimation")
         
         
         // auto remove tip view
-        let duration: NSTimeInterval = 2
-        let delay = dispatch_time(DISPATCH_TIME_NOW,
-                                  Int64(duration * Double(NSEC_PER_SEC)))
-        dispatch_after(delay, dispatch_get_main_queue()) { () -> Void in
+        let duration: TimeInterval = 2
+        let delay = DispatchTime.now() + Double(Int64(duration * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: delay) { () -> Void in
             
             textView.alpha = 0
             
@@ -124,14 +123,14 @@ extension MATBaseViewController {
             let yAnimation = CABasicAnimation(keyPath: "position.y")
             yAnimation.fromValue = 0
             yAnimation.toValue = -tipViewHeight
-            yAnimation.additive = true
+            yAnimation.isAdditive = true
             yAnimation.duration = 0.2
             yAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
             
             let alphaAnimation = CABasicAnimation(keyPath: "opacity")
             alphaAnimation.fromValue = 1
             alphaAnimation.toValue = 0
-            alphaAnimation.additive = true
+            alphaAnimation.isAdditive = true
             alphaAnimation.duration = 0.2
             alphaAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
             
@@ -144,7 +143,7 @@ extension MATBaseViewController {
                 
             })
             
-            textView.layer.addAnimation(hideAnimationGroup, forKey: "hideAnimation")
+            textView.layer.add(hideAnimationGroup, forKey: "hideAnimation")
         }
     }
 }

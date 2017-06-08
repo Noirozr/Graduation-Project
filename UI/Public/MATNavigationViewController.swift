@@ -14,7 +14,7 @@ class MATNavigationViewController: UINavigationController {
         super.init(rootViewController: rootViewController)
     }
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle:nibBundleOrNil)
     }
     
@@ -33,21 +33,21 @@ class MATNavigationViewController: UINavigationController {
         super.didReceiveMemoryWarning()
     }
     
-    override func pushViewController(viewController: UIViewController, animated: Bool) {
-        interactivePopGestureRecognizer?.enabled = false
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        interactivePopGestureRecognizer?.isEnabled = false
         super.pushViewController(viewController, animated: animated)
     }
 }
 
 extension MATNavigationViewController: UIGestureRecognizerDelegate {
     
-    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }
 
 extension MATNavigationViewController: UINavigationControllerDelegate {
-    func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool) {
-        interactivePopGestureRecognizer?.enabled = navigationController.viewControllers.count > 1
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        interactivePopGestureRecognizer?.isEnabled = navigationController.viewControllers.count > 1
     }
 }

@@ -25,8 +25,8 @@ class ALImageViewController: MATBaseViewController {
     }
     
     //MARK: - Private Methods
-    private func p_constructSubviews() {
-        let imageView = AnimatableImageView(frame: CGRectZero)
+    fileprivate func p_constructSubviews() {
+        let imageView = GIFImageView(frame: CGRect.zero)
         self.view.addSubview(imageView)
         imageView.snp_makeConstraints() { (make) -> Void in
             make.centerX.equalTo(self.view)
@@ -44,12 +44,12 @@ class ALImageViewController: MATBaseViewController {
         }
         
         detailLabel.text = "from WIKIPEDIA"
-        detailLabel.textAlignment = .Center
-        detailLabel.font = UIFont.systemFontOfSize(24)
-        detailLabel.textColor = UIColor.blackColor()
+        detailLabel.textAlignment = .center
+        detailLabel.font = UIFont.systemFont(ofSize: 24)
+        detailLabel.textColor = UIColor.black
         guard let id = self.rowId else {
             return
         }
-        imageView.animateWithImage(named: "\(id).gif")
+        imageView.animate(withGIFNamed: "\(id).gif")
     }
 }

@@ -1,4 +1,14 @@
+#ifdef __OBJC__
 #import <UIKit/UIKit.h>
+#else
+#ifndef FOUNDATION_EXPORT
+#if defined(__cplusplus)
+#define FOUNDATION_EXPORT extern "C"
+#else
+#define FOUNDATION_EXPORT extern
+#endif
+#endif
+#endif
 
 #import "RETableViewBoolCell.h"
 #import "RETableViewCreditCardCell.h"
@@ -12,6 +22,7 @@
 #import "RETableViewPickerCell.h"
 #import "RETableViewSegmentedCell.h"
 #import "RETableViewTextCell.h"
+#import "NSBundle+RETableViewManager.h"
 #import "NSString+RETableViewManagerAdditions.h"
 #import "REActionBar.h"
 #import "REPlaceholderTextView.h"

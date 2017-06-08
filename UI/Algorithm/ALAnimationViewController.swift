@@ -13,9 +13,9 @@ class ALAnimationViewController: MATBaseViewController {
     var rowId: Int?
     var dataArray: Array<[Int]>?
     
-    private var p_index = 0
-    private var _collectionView: UICollectionView?
-    private var _changeIndex: [Int] = []
+    fileprivate var p_index = 0
+    fileprivate var _collectionView: UICollectionView?
+    fileprivate var _changeIndex: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +30,8 @@ class ALAnimationViewController: MATBaseViewController {
     }
     
     //MARK: - Private Methods
-    private func p_constructSubviews() {
-        let nextButton = DynamicButton(style: .CaretRight)
+    fileprivate func p_constructSubviews() {
+        let nextButton = DynamicButton(style: .caretRight)
         self.view.addSubview(nextButton)
         nextButton.snp_makeConstraints() { (make) -> Void in
             make.bottom.equalTo(self.view).offset(-10)
@@ -40,7 +40,7 @@ class ALAnimationViewController: MATBaseViewController {
             make.height.equalTo(40)
         }
         
-        let prevButton = DynamicButton(style: .CaretLeft)
+        let prevButton = DynamicButton(style: .caretLeft)
         self.view.addSubview(prevButton)
         prevButton.snp_makeConstraints() { (make) -> Void in
             make.bottom.equalTo(self.view).offset(-10)
@@ -51,7 +51,7 @@ class ALAnimationViewController: MATBaseViewController {
         
         let layout = AnimeCollectionViewLayout()
         
-        let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         self.view.addSubview(collectionView)
         collectionView.snp_makeConstraints() { (make) -> Void in
             make.top.equalTo(self.view).offset(MATConstant.NavigationBarHeight + 25)
@@ -60,11 +60,11 @@ class ALAnimationViewController: MATBaseViewController {
             make.bottom.equalTo(nextButton.snp_top).offset(-10)
         }
         
-        prevButton.addTarget(self, action: #selector(ALAnimationViewController.prevButtonTapped(_:)), forControlEvents: .TouchUpInside)
-        nextButton.addTarget(self, action: #selector(ALAnimationViewController.nextButtonTapped(_:)), forControlEvents: .TouchUpInside)
+        prevButton.addTarget(self, action: #selector(ALAnimationViewController.prevButtonTapped(_:)), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(ALAnimationViewController.nextButtonTapped(_:)), for: .touchUpInside)
         
-        collectionView.backgroundColor = UIColor.clearColor()
-        collectionView.registerClass(AnimeCollectionViewCell.self, forCellWithReuseIdentifier: "AnimeCollectionViewCell")
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.register(AnimeCollectionViewCell.self, forCellWithReuseIdentifier: "AnimeCollectionViewCell")
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -73,7 +73,7 @@ class ALAnimationViewController: MATBaseViewController {
     }
     
     //MARK: - Event
-    func nextButtonTapped(sender: UIButton) {
+    func nextButtonTapped(_ sender: UIButton) {
         guard let array = self.dataArray else {
             return
         }
@@ -96,7 +96,7 @@ class ALAnimationViewController: MATBaseViewController {
         }
         _collectionView?.reloadData()
     }
-    func prevButtonTapped(sender: UIButton) {
+    func prevButtonTapped(_ sender: UIButton) {
         guard let array = self.dataArray else {
             return
         }
@@ -123,20 +123,20 @@ class ALAnimationViewController: MATBaseViewController {
 //MARK: - Extension UICollectionViewDatasource, UICollectionViewDelegate
 extension ALAnimationViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnimeCollectionViewCell", forIndexPath: indexPath) as! AnimeCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimeCollectionViewCell", for: indexPath) as! AnimeCollectionViewCell
         guard let array = self.dataArray else {
             return cell
         }
-        cell.layer.borderColor = UIColor.whiteColor().CGColor
+        cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 2
         cell.layer.cornerRadius = 15
 
@@ -154,19 +154,19 @@ extension ALAnimationViewController: UICollectionViewDelegate, UICollectionViewD
 //MARK: - AlCCollectionViewLayout
 class AnimeCollectionViewLayout: UICollectionViewFlowLayout {
     
-    override func prepareLayout() {
-        super.prepareLayout()
+    override func prepare() {
+        super.prepare()
         
         let height: CGFloat = 100
         self.itemSize.height = height
-        self.itemSize.width = (self.collectionView?.frame.size.width ?? UIScreen.mainScreen().bounds.width) - 30
+        self.itemSize.width = (self.collectionView?.frame.size.width ?? UIScreen.main.bounds.width) - 30
         
         self.sectionInset = UIEdgeInsetsMake(15, 15, 0, 15)
         
         let minimumLineSpacing: CGFloat = 15
         self.minimumInteritemSpacing = minimumLineSpacing
         
-        self.scrollDirection = .Vertical
+        self.scrollDirection = .vertical
         
     }
 }
@@ -179,7 +179,7 @@ struct AnimeCellData {
 
 class AnimeCollectionViewCell: UICollectionViewCell {
     
-    private let ktitleLabel = UILabel()
+    fileprivate let ktitleLabel = UILabel()
     //MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -193,19 +193,19 @@ class AnimeCollectionViewCell: UICollectionViewCell {
         p_constructSubviews()
     }
     //MARK: - Private Method
-    private func p_constructSubviews() {
+    fileprivate func p_constructSubviews() {
         addSubview(ktitleLabel)
         ktitleLabel.snp_makeConstraints() { (make) -> Void in
             make.center.equalTo(self)
         }
         
-        ktitleLabel.backgroundColor = UIColor.clearColor()
+        ktitleLabel.backgroundColor = UIColor.clear
         ktitleLabel.font = UIFont(name: "Avenir", size: 20)
-        ktitleLabel.textColor = UIColor.whiteColor()
+        ktitleLabel.textColor = UIColor.white
 
     }
     //MARK: - Public Methods
-    func refreshContentByData(data: Int) {
+    func refreshContentByData(_ data: Int) {
         ktitleLabel.text = "\(data)"
     }
     

@@ -14,8 +14,8 @@ class ALCViewController: MATBaseViewController {
     var name: String?
     var algorithmDescription: String?
     
-    private var _collectionView: UICollectionView!
-    private var _itemDataArray: [AlCCellData] = []
+    fileprivate var _collectionView: UICollectionView!
+    fileprivate var _itemDataArray: [AlCCellData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,23 +36,23 @@ class ALCViewController: MATBaseViewController {
     }
     
     override func navRightBtnClicked() {
-        let alert = UIAlertController(title: "注意", message: "是否已经完成学习", preferredStyle: .Alert)
-        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Destructive, handler: nil)
+        let alert = UIAlertController(title: "注意", message: "是否已经完成学习", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.destructive, handler: nil)
         alert.addAction(cancelAction)
-        let okAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.Default) { (action) in
-            guard var data = NSUserDefaults.standardUserDefaults().objectForKey("ASP") as? [Int], let id = self.rowId else {
+        let okAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.default) { (action) in
+            guard var data = UserDefaults.standard.object(forKey: "ASP") as? [Int], let id = self.rowId else {
                 return
             }
             
             data[id] = 1
-            NSUserDefaults.standardUserDefaults().setObject(data, forKey: "ASP")
+            UserDefaults.standard.set(data, forKey: "ASP")
         }
         alert.addAction(okAction)
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
     //MARK: - Private Methods
-    private func p_constructSubviews() {
+    fileprivate func p_constructSubviews() {
         let titleLabel = UILabel()
         self.view.addSubview(titleLabel)
         titleLabel.snp_makeConstraints() { (make) -> Void in
@@ -71,7 +71,7 @@ class ALCViewController: MATBaseViewController {
         }
         let layout = AlCCollectionViewLayout()
         
-        let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         self.view.addSubview(collectionView)
         collectionView.snp_makeConstraints() { (make) -> Void in
             make.top.equalTo(descripLabel.snp_bottom).offset(10)
@@ -79,17 +79,17 @@ class ALCViewController: MATBaseViewController {
             make.trailing.equalTo(self.view).offset(-10)
             make.bottom.equalTo(self.view).offset(-10)
         }
-        collectionView.backgroundColor = UIColor.clearColor()
-        collectionView.registerClass(AlCCollectionViewCell.self, forCellWithReuseIdentifier: "AlCCollectionViewCell")
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.register(AlCCollectionViewCell.self, forCellWithReuseIdentifier: "AlCCollectionViewCell")
         collectionView.delegate = self
         collectionView.dataSource = self
         
         _collectionView = collectionView
         
         titleLabel.text = name
-        titleLabel.font = UIFont.systemFontOfSize(35)
+        titleLabel.font = UIFont.systemFont(ofSize: 35)
         descripLabel.text = algorithmDescription
-        descripLabel.lineBreakMode = .ByTruncatingTail
+        descripLabel.lineBreakMode = .byTruncatingTail
         descripLabel.numberOfLines = 0
     }
     
@@ -98,24 +98,24 @@ class ALCViewController: MATBaseViewController {
 //MARK: - Extension UICollectionViewDatasource, UICollectionViewDelegate
 extension ALCViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AlCCollectionViewCell", forIndexPath: indexPath) as! AlCCollectionViewCell
-        cell.layer.borderColor = UIColor.whiteColor().CGColor
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlCCollectionViewCell", for: indexPath) as! AlCCollectionViewCell
+        cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 2
         cell.layer.cornerRadius = 15
         cell.refreshContentByData(_itemDataArray[indexPath.row])
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
             let nextVC = ALAnimationViewController()
@@ -155,19 +155,19 @@ extension ALCViewController: UICollectionViewDelegate, UICollectionViewDataSourc
 //MARK: - AlCCollectionViewLayout
 class AlCCollectionViewLayout: UICollectionViewFlowLayout {
     
-    override func prepareLayout() {
-        super.prepareLayout()
+    override func prepare() {
+        super.prepare()
         
         let height: CGFloat = 148
         self.itemSize.height = height
-        self.itemSize.width = (self.collectionView?.frame.size.width ?? UIScreen.mainScreen().bounds.width) - 30
+        self.itemSize.width = (self.collectionView?.frame.size.width ?? UIScreen.main.bounds.width) - 30
         
         self.sectionInset = UIEdgeInsetsMake(15, 15, 0, 15)
         
         let minimumLineSpacing: CGFloat = 15
         self.minimumInteritemSpacing = minimumLineSpacing
         
-        self.scrollDirection = .Vertical
+        self.scrollDirection = .vertical
         
     }
 }
@@ -180,7 +180,7 @@ struct AlCCellData {
 
 class AlCCollectionViewCell: UICollectionViewCell {
     
-    private let ktitleLabel = UILabel()
+    fileprivate let ktitleLabel = UILabel()
     //MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -194,18 +194,18 @@ class AlCCollectionViewCell: UICollectionViewCell {
         p_constructSubviews()
     }
     //MARK: - Private Method
-    private func p_constructSubviews() {
+    fileprivate func p_constructSubviews() {
         addSubview(ktitleLabel)
         ktitleLabel.snp_makeConstraints() { (make) -> Void in
             make.center.equalTo(self)
         }
         
-        ktitleLabel.backgroundColor = UIColor.clearColor()
+        ktitleLabel.backgroundColor = UIColor.clear
         ktitleLabel.font = UIFont(name: "Avenir", size: 20)
-        ktitleLabel.textColor = UIColor.whiteColor()
+        ktitleLabel.textColor = UIColor.white
     }
     //MARK: - Public Methods
-    func refreshContentByData(data: AlCCellData) {
+    func refreshContentByData(_ data: AlCCellData) {
         backgroundColor = data.backgroundColor
         ktitleLabel.text = data.title
     }

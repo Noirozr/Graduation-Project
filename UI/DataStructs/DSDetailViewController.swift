@@ -25,17 +25,17 @@ class DSDetailViewController: MATBaseViewController {
     }
     
     //MARK: - Private Methods
-    private func p_constructSubviews() {
-        let webView = WKWebView(frame: CGRectZero)
+    fileprivate func p_constructSubviews() {
+        let webView = WKWebView(frame: CGRect.zero)
         self.view.addSubview(webView)
         webView.snp_makeConstraints() { (make) -> Void in
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(MATConstant.NavigationBarHeight, 0, 0, 0))
         }
-        guard let id = self.rowId, let path = NSBundle.mainBundle().pathForResource("\(id)", ofType: "pdf") else {
+        guard let id = self.rowId, let path = Bundle.main.path(forResource: "\(id)", ofType: "pdf") else {
             return
         }
-        let url = NSURL(fileURLWithPath: path)
-        webView.loadFileURL(url, allowingReadAccessToURL: url)
+        let url = URL(fileURLWithPath: path)
+        webView.loadFileURL(url, allowingReadAccessTo: url)
     }
 
 }

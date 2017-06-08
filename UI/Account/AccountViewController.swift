@@ -10,8 +10,8 @@ import UIKit
 
 class AccountViewController: MATBaseViewController {
     
-    private var _collectionView: UICollectionView!
-    private var _itemDataArray: [AccountCellData] = []
+    fileprivate var _collectionView: UICollectionView!
+    fileprivate var _itemDataArray: [AccountCellData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,16 +30,16 @@ class AccountViewController: MATBaseViewController {
     }
     
     //MARK: - Private Methods
-    private func p_constructSubviews() {
+    fileprivate func p_constructSubviews() {
         let layout = AccountCollectionViewLayout()
         
-        let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         self.view.addSubview(collectionView)
         collectionView.snp_makeConstraints() { (make) -> Void in
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(MATConstant.NavigationBarHeight, 0, 0, 0))
         }
-        collectionView.backgroundColor = UIColor.clearColor()
-        collectionView.registerClass(AccountCollectionViewCell.self, forCellWithReuseIdentifier: "AccountCollectionViewCell")
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.register(AccountCollectionViewCell.self, forCellWithReuseIdentifier: "AccountCollectionViewCell")
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -52,21 +52,21 @@ class AccountViewController: MATBaseViewController {
 //MARK: - Extension UICollectionViewDelegate, UICollectionViewDataSource
 extension AccountViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return _itemDataArray.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AccountCollectionViewCell", forIndexPath: indexPath) as! AccountCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AccountCollectionViewCell", for: indexPath) as! AccountCollectionViewCell
         cell.refreshContentByData(_itemDataArray[indexPath.row])
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
             let nextVC = DSPViewController()

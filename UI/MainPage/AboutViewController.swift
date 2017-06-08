@@ -23,7 +23,7 @@ class AboutViewController: MATBaseViewController {
     }
     
     //MARK: - Private Methods
-    private func p_constructSubviews() {
+    fileprivate func p_constructSubviews() {
         
         let imageView = UIImageView()
         imageView.image = UIImage(named: "icon")
@@ -76,22 +76,22 @@ class AboutViewController: MATBaseViewController {
         
         rightLabel.text = "Copyright © Yongjia Liu. All rights reserved. \nThis application is provided for education purposes only, and is intended for personal, non-commercial use. Product specifications are subject to change without notice.\n  \n此应用程序仅供教育使用，适用于个人和非商业用途。产品规格如有变更，恕不告知。"
         rightLabel.numberOfLines = 0
-        rightLabel.textColor = UIColor.blackColor()
-        rightLabel.font = UIFont.systemFontOfSize(18)
+        rightLabel.textColor = UIColor.black
+        rightLabel.font = UIFont.systemFont(ofSize: 18)
         
-        feedBackView.backgroundColor = UIColor.clearColor()
+        feedBackView.backgroundColor = UIColor.clear
         feedBackLabel.text = "FeedBack"
         feedBackLabel.textColor = UIColor.fcb_colorWithHexString("2B79FB")
-        feedBackLabel.font = UIFont.systemFontOfSize(20)
+        feedBackLabel.font = UIFont.systemFont(ofSize: 20)
         
         let feedbackTap = UITapGestureRecognizer()
         feedBackView.addGestureRecognizer(feedbackTap)
         feedbackTap.addTarget(self, action: #selector(AboutViewController.feedBack))
         
-        shareView.backgroundColor = UIColor.clearColor()
+        shareView.backgroundColor = UIColor.clear
         shareLabel.text = "Share"
         shareLabel.textColor = UIColor.fcb_colorWithHexString("2B79FB")
-        shareLabel.font = UIFont.systemFontOfSize(20)
+        shareLabel.font = UIFont.systemFont(ofSize: 20)
         
         let shareTap = UITapGestureRecognizer()
         shareView.addGestureRecognizer(shareTap)
@@ -100,36 +100,36 @@ class AboutViewController: MATBaseViewController {
     
     //MARK: - Events
     func feedBack() {
-        let alert = UIAlertController(title: "Feedback", message: "选择反馈方式", preferredStyle: .Alert)
-        let mailAction = UIAlertAction(title: "邮箱", style: .Default){ (action) in
+        let alert = UIAlertController(title: "Feedback", message: "选择反馈方式", preferredStyle: .alert)
+        let mailAction = UIAlertAction(title: "邮箱", style: .default){ (action) in
             if MFMailComposeViewController.canSendMail() {
                 let mailComposeVC = MFMailComposeViewController()
                 mailComposeVC.mailComposeDelegate = self
                 mailComposeVC.setToRecipients(["noirozr@icloud.com"])
                 mailComposeVC.setSubject("应用反馈")
-                self.presentViewController(mailComposeVC, animated: true, completion: nil)
+                self.present(mailComposeVC, animated: true, completion: nil)
             } else {
                 self.showFloatingTipMessage("设备还没有添加邮件账户")
             }
             
         }
-        let weChatAction = UIAlertAction(title: "微信", style: .Default) { (action) in
-            let pasteBoard = UIPasteboard.generalPasteboard()
+        let weChatAction = UIAlertAction(title: "微信", style: .default) { (action) in
+            let pasteBoard = UIPasteboard.general
             pasteBoard.string = "1074199235"
             self.showFloatingTipMessage("已复制 L.Y.J 的微信到剪切板")
         }
-        let cancelAction = UIAlertAction(title: "取消", style: .Cancel) { (_) in }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel) { (_) in }
         alert.addAction(mailAction)
         alert.addAction(weChatAction)
         alert.addAction(cancelAction)
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
     func share() {
         let textToShare = "I am learning Data Structures and Algorithm with Material on iOS"
         let activityItems = [textToShare]
         let shareActivityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: [])
-        self.navigationController?.presentViewController(shareActivityViewController, animated: true) {
+        self.navigationController?.present(shareActivityViewController, animated: true) {
             self.showFloatingTipMessage("Executing")
         }
     }
@@ -138,7 +138,7 @@ class AboutViewController: MATBaseViewController {
 
 //MARK: - MFMailComposeViewControllerDelegate
 extension AboutViewController: MFMailComposeViewControllerDelegate {
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }

@@ -10,8 +10,8 @@ import UIKit
 
 class MainPageViewController: MATBaseViewController {
     
-    private var _collectionView: UICollectionView!
-    private var _itemDataArray: [MainPageCollectionViewCellData] = []
+    fileprivate var _collectionView: UICollectionView!
+    fileprivate var _itemDataArray: [MainPageCollectionViewCellData] = []
 
     override func viewDidLoad() {
         
@@ -42,16 +42,16 @@ class MainPageViewController: MATBaseViewController {
     }
     
     //MARK: - Private Methods
-    private func p_constructSubviews() {
+    fileprivate func p_constructSubviews() {
         let layout = MainPageCollectionViewFlowLayout()
         
-        let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         self.view.addSubview(collectionView)
         collectionView.snp_makeConstraints() { (make) -> Void in
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(MATConstant.NavigationBarHeight, 0, 0, 0))
         }
-        collectionView.backgroundColor = UIColor.clearColor()
-        collectionView.registerClass(MainPageCollectionViewCell.self, forCellWithReuseIdentifier: "MainPageCollectionViewCell")
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.register(MainPageCollectionViewCell.self, forCellWithReuseIdentifier: "MainPageCollectionViewCell")
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -63,22 +63,22 @@ class MainPageViewController: MATBaseViewController {
 //MARK: - UICollectionView Extension
 extension MainPageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return _itemDataArray.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MainPageCollectionViewCell", forIndexPath: indexPath) as! MainPageCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainPageCollectionViewCell", for: indexPath) as! MainPageCollectionViewCell
         cell.refreshContentByData(_itemDataArray[indexPath.row])
         
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
             let nextVC = DataStrcuturesViewController()

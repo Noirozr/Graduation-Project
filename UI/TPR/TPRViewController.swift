@@ -10,7 +10,7 @@ import UIKit
 import YYText
 import SafariServices
 
-let scrHeight = UIScreen.mainScreen().bounds.height
+let scrHeight = UIScreen.main.bounds.height
 
 class TPRViewController: MATBaseViewController {
 
@@ -26,7 +26,7 @@ class TPRViewController: MATBaseViewController {
     }
     
     //MARK: - Private Methods
-    private func p_constructSubviews() {
+    fileprivate func p_constructSubviews() {
         
         let algorithmView = UIView()
         self.view.addSubview(algorithmView)
@@ -47,7 +47,7 @@ class TPRViewController: MATBaseViewController {
             make.height.equalTo(29)
         }
         
-        algorithmView.backgroundColor = UIColor.whiteColor()
+        algorithmView.backgroundColor = UIColor.white
         
         let algorithmIntroductionLabel = UILabel()
         algorithmView.addSubview(algorithmIntroductionLabel)
@@ -60,7 +60,7 @@ class TPRViewController: MATBaseViewController {
         
         algorithmTitleLabel.text = "Algorithm Courses"
         algorithmTitleLabel.textColor = UIColor.fcb_colorWithHexString("2B76FD")
-        algorithmTitleLabel.font = UIFont.systemFontOfSize(26)
+        algorithmTitleLabel.font = UIFont.systemFont(ofSize: 26)
         
         algorithmIntroductionLabel.text = "An algorithm is an effective method that can be expressed within a finite amount of space and time and in a well-defined formal language for calculating a function."
         algorithmIntroductionLabel.numberOfLines = 0
@@ -85,8 +85,8 @@ class TPRViewController: MATBaseViewController {
         
         albiView.backgroundColor = UIColor.fcb_colorWithHexString("2B76FD")
         albiLabel.text = "Source: Bilibili"
-        albiLabel.textColor = UIColor.whiteColor()
-        albiLabel.font = UIFont.systemFontOfSize(20)
+        albiLabel.textColor = UIColor.white
+        albiLabel.font = UIFont.systemFont(ofSize: 20)
         
         let alBilibiliTap = UITapGestureRecognizer()
         albiView.addGestureRecognizer(alBilibiliTap)
@@ -111,8 +111,8 @@ class TPRViewController: MATBaseViewController {
         
         alitunesuView.backgroundColor = UIColor.fcb_colorWithHexString("2B76FD")
         alitunesuLabel.text = "Source: iTunes U"
-        alitunesuLabel.textColor = UIColor.whiteColor()
-        alitunesuLabel.font = UIFont.systemFontOfSize(20)
+        alitunesuLabel.textColor = UIColor.white
+        alitunesuLabel.font = UIFont.systemFont(ofSize: 20)
         
         let alitunesuTap = UITapGestureRecognizer()
         alitunesuView.addGestureRecognizer(alitunesuTap)
@@ -137,8 +137,8 @@ class TPRViewController: MATBaseViewController {
         
         alNeteaseView.backgroundColor = UIColor.fcb_colorWithHexString("2B76FD")
         alNeteaseLabel.text = "Source: Netease Open Course"
-        alNeteaseLabel.textColor = UIColor.whiteColor()
-        alNeteaseLabel.font = UIFont.systemFontOfSize(20)
+        alNeteaseLabel.textColor = UIColor.white
+        alNeteaseLabel.font = UIFont.systemFont(ofSize: 20)
         
         let alNeteaseTap = UITapGestureRecognizer()
         alNeteaseView.addGestureRecognizer(alNeteaseTap)
@@ -171,11 +171,11 @@ class TPRViewController: MATBaseViewController {
             make.height.equalTo(70)
         }
         
-        DSView.backgroundColor = UIColor.whiteColor()
+        DSView.backgroundColor = UIColor.white
         
         DSTitleLabel.text = "Data Structures Courses"
         DSTitleLabel.textColor = UIColor.fcb_colorWithHexString("2B76FD")
-        DSTitleLabel.font = UIFont.systemFontOfSize(26)
+        DSTitleLabel.font = UIFont.systemFont(ofSize: 26)
         
         DSIntroductionLabel.text = "A data structure is a particular way of organizing data in a computer so that it can be used efficiently."
         DSIntroductionLabel.numberOfLines = 0
@@ -200,8 +200,8 @@ class TPRViewController: MATBaseViewController {
         
         DSitunesuView.backgroundColor = UIColor.fcb_colorWithHexString("2B76FD")
         DSitunesuLabel.text = "Source: iTunes U"
-        DSitunesuLabel.textColor = UIColor.whiteColor()
-        DSitunesuLabel.font = UIFont.systemFontOfSize(20)
+        DSitunesuLabel.textColor = UIColor.white
+        DSitunesuLabel.font = UIFont.systemFont(ofSize: 20)
         
         let DSitunesuTap = UITapGestureRecognizer()
         DSitunesuView.addGestureRecognizer(DSitunesuTap)
@@ -211,10 +211,10 @@ class TPRViewController: MATBaseViewController {
     
     //MARK: - Event
     func albilibilitapped() {
-        if (UIApplication.sharedApplication().canOpenURL(NSURL(string: "bilibili://")!)) {
-            UIApplication.sharedApplication().openURL(NSURL(string: "bilibili://?av=3372873")!)
+        if (UIApplication.shared.canOpenURL(URL(string: "bilibili://")!)) {
+            UIApplication.shared.openURL(URL(string: "bilibili://?av=3372873")!)
         } else {
-            let nextVC = SFSafariViewController(URL: NSURL(string: "http://www.bilibili.com/video/av3372873/")!)
+            let nextVC = SFSafariViewController(url: URL(string: "http://www.bilibili.com/video/av3372873/")!)
             navigationController?.pushViewController(nextVC, animated: true)
         }
         
@@ -222,19 +222,19 @@ class TPRViewController: MATBaseViewController {
     
     func alitunesuapped() {
         
-        let nextVC = SFSafariViewController(URL: NSURL(string: "https://itunes.apple.com/cn/itunes-u/introduction-to-algorithms/id341597754?mt=10")!)
+        let nextVC = SFSafariViewController(url: URL(string: "https://itunes.apple.com/cn/itunes-u/introduction-to-algorithms/id341597754?mt=10")!)
         navigationController?.pushViewController(nextVC, animated: true)
     }
     
     func alneteasetapped() {
         
-        let nextVC = SFSafariViewController(URL: NSURL(string: "http://open.163.com/special/opencourse/algorithms.html")!)
+        let nextVC = SFSafariViewController(url: URL(string: "http://open.163.com/special/opencourse/algorithms.html")!)
         navigationController?.pushViewController(nextVC, animated: true)
         
     }
     
     func dsitunesuapped() {
-        let nextVC = SFSafariViewController(URL: NSURL(string: "https://itunes.apple.com/cn/itunes-u/advanced-data-structures/id735348884?mt=10")!)
+        let nextVC = SFSafariViewController(url: URL(string: "https://itunes.apple.com/cn/itunes-u/advanced-data-structures/id735348884?mt=10")!)
         navigationController?.pushViewController(nextVC, animated: true)
     }
     

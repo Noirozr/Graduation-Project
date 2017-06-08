@@ -12,8 +12,8 @@ import SQLite
 
 class AlgorithmViewController: MATBaseViewController {
 
-    private var _collectionView: UICollectionView!
-    private var _itemDataArray: [AlgorithmCellData] = []
+    fileprivate var _collectionView: UICollectionView!
+    fileprivate var _itemDataArray: [AlgorithmCellData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,16 +41,16 @@ class AlgorithmViewController: MATBaseViewController {
     }
     
     //MARK: - Private Methods
-    private func p_constructSubviews() {
+    fileprivate func p_constructSubviews() {
         let layout = AlgorithmCollectionViewLayout()
         
-        let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         self.view.addSubview(collectionView)
         collectionView.snp_makeConstraints() { (make) -> Void in
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(MATConstant.NavigationBarHeight, 0, 0, 0))
         }
-        collectionView.backgroundColor = UIColor.clearColor()
-        collectionView.registerClass(AlgorithmCollectionViewCell.self, forCellWithReuseIdentifier: "AlgorithmCollectionViewCell")
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.register(AlgorithmCollectionViewCell.self, forCellWithReuseIdentifier: "AlgorithmCollectionViewCell")
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -62,27 +62,27 @@ class AlgorithmViewController: MATBaseViewController {
 //MARK: - Extension UICollectionViewDelegate, UICollectionViewDataSource
 extension AlgorithmViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sortData.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AlgorithmCollectionViewCell", forIndexPath: indexPath) as! AlgorithmCollectionViewCell
-        cell.layer.borderColor = UIColor.whiteColor().CGColor
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AlgorithmCollectionViewCell", for: indexPath) as! AlgorithmCollectionViewCell
+        cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 2
         cell.layer.cornerRadius = 15
         cell.refreshContentByData(_itemDataArray[indexPath.row])
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let nextVC = ALCViewController()
         do {
-            guard let path = NSBundle.mainBundle().pathForResource("MATDB", ofType: "sqlite") else {
+            guard let path = Bundle.main.path(forResource: "MATDB", ofType: "sqlite") else {
                 print("path wrong")
                 return 
             }
@@ -94,12 +94,10 @@ extension AlgorithmViewController: UICollectionViewDelegate, UICollectionViewDat
             
             let columnId = Int64(indexPath.row + 1)
             let results = table.filter(id == columnId)
-            guard let result = db.pluck(results) else {
-                return
-            }
+            let result = try db.pluck(results)
             
             nextVC.rowId = indexPath.row
-            nextVC.algorithmDescription = result[content]
+            nextVC.algorithmDescription = result?[content]
             
         } catch {
             print(error)

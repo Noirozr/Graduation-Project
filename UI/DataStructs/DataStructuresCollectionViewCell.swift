@@ -16,7 +16,7 @@ struct DataStructuresCellData {
 
 class DataStructuresCollectionViewCell: UICollectionViewCell {
     
-    private let ktitleLabel = UILabel()
+    fileprivate let ktitleLabel = UILabel()
     //MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,18 +30,18 @@ class DataStructuresCollectionViewCell: UICollectionViewCell {
         p_constructSubviews()
     }
     //MARK: - Private Method
-    private func p_constructSubviews() {
+    fileprivate func p_constructSubviews() {
         addSubview(ktitleLabel)
         ktitleLabel.snp_makeConstraints() { (make) -> Void in
             make.center.equalTo(self)
         }
         
-        ktitleLabel.backgroundColor = UIColor.clearColor()
+        ktitleLabel.backgroundColor = UIColor.clear
         ktitleLabel.font = UIFont(name: "Avenir", size: 20)
-        ktitleLabel.textColor = UIColor.whiteColor()
+        ktitleLabel.textColor = UIColor.white
     }
     //MARK: - Public Methods
-    func refreshContentByData(data: DataStructuresCellData) {
+    func refreshContentByData(_ data: DataStructuresCellData) {
         backgroundColor = data.backgroundColor
         ktitleLabel.text = data.title
     }

@@ -10,18 +10,18 @@ import UIKit
 
 class MainPageCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
-    override func prepareLayout() {
-        super.prepareLayout()
+    override func prepare() {
+        super.prepare()
         
         let height: CGFloat = 148
         self.itemSize.height = height
-        self.itemSize.width = (self.collectionView?.frame.size.width ?? UIScreen.mainScreen().bounds.width) - 30
+        self.itemSize.width = (self.collectionView?.frame.size.width ?? UIScreen.main.bounds.width) - 30
     
         self.sectionInset = UIEdgeInsetsMake(15, 15, 0, 15)
         
         let minimumLineSpacing: CGFloat = 15
         self.minimumInteritemSpacing = minimumLineSpacing
         
-        self.scrollDirection = .Vertical
+        self.scrollDirection = .vertical
     }
 }

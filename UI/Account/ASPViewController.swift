@@ -11,7 +11,7 @@ import PNChart
 
 class ASPViewController: MATBaseViewController {
 
-    private var current = 0
+    fileprivate var current = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Current Progress"
@@ -25,7 +25,7 @@ class ASPViewController: MATBaseViewController {
     }
     
     //MARK: - Private Methods
-    private func p_constructSubviews() {
+    fileprivate func p_constructSubviews() {
         let titleLabel = UILabel()
         self.view.addSubview(titleLabel)
         titleLabel.snp_makeConstraints() { (make) -> Void in
@@ -36,12 +36,12 @@ class ASPViewController: MATBaseViewController {
         }
         
         titleLabel.text = "Current Algorithm Learning Progress"
-        titleLabel.textAlignment = .Center
+        titleLabel.textAlignment = .center
         titleLabel.textColor = UIColor.fcb_colorWithHexString("2B76FD")
-        titleLabel.backgroundColor = UIColor.clearColor()
-        titleLabel.font = UIFont.systemFontOfSize(20)
+        titleLabel.backgroundColor = UIColor.clear
+        titleLabel.font = UIFont.systemFont(ofSize: 20)
         
-        guard let data = NSUserDefaults.standardUserDefaults().objectForKey("ASP") as? [Int] else {
+        guard let data = UserDefaults.standard.object(forKey: "ASP") as? [Int] else {
             return
         }
         
@@ -51,9 +51,9 @@ class ASPViewController: MATBaseViewController {
             }
         }
         
-        let circleChart = PNCircleChart(frame: CGRectMake(0, 0, self.view.frame.size.width - 30, 200), total: 5, current: self.current, clockwise: false, shadow: false, shadowColor: UIColor.whiteColor())
-        self.view.addSubview(circleChart)
-        circleChart.snp_makeConstraints() { (make) -> Void in
+        let circleChart = PNCircleChart(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width - 30, height: 200), total: 5, current: self.current as NSNumber, clockwise: false, shadow: false, shadowColor: UIColor.white)
+        self.view.addSubview(circleChart!)
+        circleChart?.snp_makeConstraints() { (make) -> Void in
             make.top.equalTo(titleLabel.snp_bottom).offset(15)
             make.leading.equalTo(self.view).offset(15)
             make.trailing.equalTo(self.view).offset(-15)
@@ -62,9 +62,9 @@ class ASPViewController: MATBaseViewController {
         
         
         
-        circleChart.backgroundColor = UIColor.clearColor()
-        circleChart.strokeColor = UIColor.fcb_colorWithHexString("2B76FD")
-        circleChart.strokeChart()
+        circleChart?.backgroundColor = UIColor.clear
+        circleChart?.strokeColor = UIColor.fcb_colorWithHexString("2B76FD")
+        circleChart?.stroke()
     }
 
 }

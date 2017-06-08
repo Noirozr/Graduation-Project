@@ -11,8 +11,8 @@ import SQLite
 
 class DataStrcuturesViewController: MATBaseViewController {
     
-    private var _collectionView: UICollectionView!
-    private var _itemDataArray: [DataStructuresCellData] = []
+    fileprivate var _collectionView: UICollectionView!
+    fileprivate var _itemDataArray: [DataStructuresCellData] = []
 
 
     override func viewDidLoad() {
@@ -33,16 +33,16 @@ class DataStrcuturesViewController: MATBaseViewController {
     }
     
     //MARK: - Private Methods
-    private func p_constructSubviews() {
+    fileprivate func p_constructSubviews() {
         let layout = DataStructuresCollectionViewFlowLayout()
         
-        let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         self.view.addSubview(collectionView)
         collectionView.snp_makeConstraints() { (make) -> Void in
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(MATConstant.NavigationBarHeight, 0, 0, 0))
         }
-        collectionView.backgroundColor = UIColor.clearColor()
-        collectionView.registerClass(DataStructuresCollectionViewCell.self, forCellWithReuseIdentifier: "DataStructuresCollectionViewCell")
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.register(DataStructuresCollectionViewCell.self, forCellWithReuseIdentifier: "DataStructuresCollectionViewCell")
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -55,24 +55,24 @@ class DataStrcuturesViewController: MATBaseViewController {
 //MARK: - Extension UICollectionViewDelegate, UICollectionViewDataSource
 extension DataStrcuturesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return DSData.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DataStructuresCollectionViewCell", forIndexPath: indexPath) as! DataStructuresCollectionViewCell
-        cell.layer.borderColor = UIColor.whiteColor().CGColor
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DataStructuresCollectionViewCell", for: indexPath) as! DataStructuresCollectionViewCell
+        cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 2
         cell.layer.cornerRadius = 15
         cell.refreshContentByData(_itemDataArray[indexPath.row])
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let nextVC = DSContentViewController()
         nextVC.rowId = indexPath.row
         switch indexPath.row {

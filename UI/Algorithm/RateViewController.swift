@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import PNChartSwift
+import PNChart
 
 class RateViewController: MATBaseViewController {
     
-    private var _barChart: PNBarChart?
+    fileprivate var _barChart: PNBarChart?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class RateViewController: MATBaseViewController {
     }
     
     //MARK:- Private Methods
-    private func p_constructSubviews() {
+    fileprivate func p_constructSubviews() {
         let segmentedArray = ["Memory", "Best", "Average", "Worst"]
         let segmentedControl = UISegmentedControl(items: segmentedArray)
         self.view.addSubview(segmentedControl)
@@ -56,7 +56,7 @@ class RateViewController: MATBaseViewController {
             make.bottom.equalTo(self.view).offset(-50)
         }
         
-        let barChart = PNBarChart(frame: CGRectMake(0, 0, self.view.frame.size.width - 30, 200))
+        let barChart = PNBarChart(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width - 30, height: 200))
         contentView.addSubview(barChart)
         barChart.snp_makeConstraints() { (make) -> Void in
             make.center.equalTo(contentView)
@@ -64,53 +64,53 @@ class RateViewController: MATBaseViewController {
             make.width.equalTo(400)
         }
         
-        segmentedControl.momentary = false
+        segmentedControl.isMomentary = false
         //segmentedControl.selectedSegmentIndex = 1
-        segmentedControl.addTarget(self, action: #selector(RateViewController.rateHandle), forControlEvents: .ValueChanged)
+        segmentedControl.addTarget(self, action: #selector(RateViewController.rateHandle), for: .valueChanged)
         
         tipsLabel.text = "Attention: 部分数值非常量，此处仅采用常数值作直观参考。变量 N 取 3。触摸上方选择对比内容。"
         tipsLabel.numberOfLines = 0
         
         barChart.xLabels = sortData
         barChart.yValues = Best
-        barChart.backgroundColor = UIColor.clearColor()
-        barChart.strokeChart()
+        barChart.backgroundColor = UIColor.clear
+        barChart.stroke()
         
         _barChart = barChart
-        _barChart?.hidden = true
+        _barChart?.isHidden = true
 
     }
     
-    func rateHandle(seg: UISegmentedControl) {
+    func rateHandle(_ seg: UISegmentedControl) {
         let index = seg.selectedSegmentIndex
-        _barChart?.hidden = false
+        _barChart?.isHidden = false
         guard let barChart = _barChart else {
             return
         }
         switch index {
         case 0:
             barChart.yValues = Memory
-            barChart.strokeChart()
+            barChart.stroke()
         case 1:
             barChart.yValues = Best
-            barChart.strokeChart()
+            barChart.stroke()
         case 2:
             //barChart.updateChartData(Average)
             barChart.yValues = Average
-            barChart.strokeChart()
+            barChart.stroke()
         case 3:
             barChart.yValues = Worst
-            barChart.strokeChart()
+            barChart.stroke()
         default:
             print("select wrong")
         }
     }
     
-    private func p_rateByMemory() {
+    fileprivate func p_rateByMemory() {
         
     }
     
-    private func p_rateByWorst() {
+    fileprivate func p_rateByWorst() {
         
     }
     

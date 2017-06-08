@@ -8,14 +8,38 @@
 
 import UIKit
 import WebKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
 
 class DSAnimationViewController: MATBaseViewController {
     
     var rowId: Int?
     var animatedUrl: String?
     
-    private var _webView: WKWebView?
-    private var _trafficLight: UIView?
+    fileprivate var _webView: WKWebView?
+    fileprivate var _trafficLight: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +52,7 @@ class DSAnimationViewController: MATBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "estimatedProgress" {
 
             if _webView?.estimatedProgress <= 0.5 {
@@ -45,9 +69,9 @@ class DSAnimationViewController: MATBaseViewController {
                 animation.fromValue = 1.0
                 animation.toValue = 0.0
                 animation.duration = 0.8
-                animation.removedOnCompletion = false
+                animation.isRemovedOnCompletion = false
                 animation.fillMode = kCAFillModeForwards
-                _trafficLight?.layer.addAnimation(animation, forKey: "opacity")
+                _trafficLight?.layer.add(animation, forKey: "opacity")
             }
         }
     }
@@ -59,20 +83,20 @@ class DSAnimationViewController: MATBaseViewController {
         webView.removeObserver(self, forKeyPath: "estimatedProgress")
     }
     //MARK: - Private Methods
-    private func p_constructSubviews() {
+    fileprivate func p_constructSubviews() {
         
 //        let js = "alert('动画效果由 Visualgo 提供。');"
 //        let script = WKUserScript(source: js, injectionTime: .AtDocumentEnd, forMainFrameOnly: true)
 //        let config = WKWebViewConfiguration()
 //        config.userContentController.addUserScript(script)
         
-        let webView = WKWebView(frame: CGRectZero)
+        let webView = WKWebView(frame: CGRect.zero)
         self.view.addSubview(webView)
         webView.snp_makeConstraints() { (make) -> Void in
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(MATConstant.NavigationBarHeight, 0, 0, 0))
         }
         
-        let trafficLightView = UIView(frame: CGRectZero)
+        let trafficLightView = UIView(frame: CGRect.zero)
         self.view.addSubview(trafficLightView)
         trafficLightView.snp_makeConstraints() { (make) -> Void in
             make.center.equalTo(webView.snp_center)
@@ -80,20 +104,20 @@ class DSAnimationViewController: MATBaseViewController {
             make.width.equalTo(50)
         }
         
-        trafficLightView.backgroundColor = UIColor.redColor()
+        trafficLightView.backgroundColor = UIColor.red
         trafficLightView.layer.cornerRadius = 5
         _trafficLight = trafficLightView
         
         
-        webView.addObserver(self, forKeyPath: "estimatedProgress", options: .New, context: nil)
+        webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         self._webView = webView
         
-        guard let url = self.animatedUrl, let address = NSURL(string: url) else {
+        guard let url = self.animatedUrl, let address = URL(string: url) else {
             return
         }
         
-        let request = NSURLRequest(URL: address)
-        webView.loadRequest(request)
+        let request = URLRequest(url: address)
+        webView.load(request)
         print(webView.estimatedProgress)
     }
 

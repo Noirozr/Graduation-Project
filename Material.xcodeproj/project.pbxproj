@@ -14,7 +14,6 @@
 		183825521C96D9AD0083788F /* MainPageCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183825511C96D9AD0083788F /* MainPageCollectionViewFlowLayout.swift */; };
 		183825571C97EF910083788F /* MATConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183825561C97EF910083788F /* MATConstant.swift */; };
 		183825601C98080C0083788F /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838255F1C98080C0083788F /* AccountViewController.swift */; };
-		18663B561CADD156009AFC9A /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18663B551CADD156009AFC9A /* SQLite.framework */; };
 		1871B6771CAC7BD200FEEC81 /* TPRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871B6761CAC7BD200FEEC81 /* TPRViewController.swift */; };
 		18818AF51CC7048D0069ABCE /* 0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 18818AF01CC7048D0069ABCE /* 0.gif */; };
 		18818AF61CC7048D0069ABCE /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 18818AF11CC7048D0069ABCE /* 1.gif */; };
@@ -127,7 +126,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18663B561CADD156009AFC9A /* SQLite.framework in Frameworks */,
 				3BDE5B6DD9A9218B3B6B455B /* Pods_Material.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

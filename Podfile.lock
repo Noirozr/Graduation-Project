@@ -11,9 +11,6 @@ PODS:
     - REValidation (~> 0.1.4)
   - REValidation (0.1.4)
   - SnapKit (3.2.0)
-  - SQLite.swift (0.11.3):
-    - SQLite.swift/standard (= 0.11.3)
-  - SQLite.swift/standard (0.11.3)
   - UICountingLabel (1.2.0)
   - YYText (1.0.7)
 
@@ -25,7 +22,6 @@ DEPENDENCIES:
   - pop
   - RETableViewManager
   - SnapKit
-  - SQLite.swift
   - YYText
 
 SPEC CHECKSUMS:
@@ -38,10 +34,9 @@ SPEC CHECKSUMS:
   RETableViewManager: 0f24d796c42c0890d38c79cc9aeb3871e186726e
   REValidation: 38c4de1be58455f8b00aab208ac80db316a66b7f
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
-  SQLite.swift: 99b36c22084427f0abbeb957556ce1528cf10bb3
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: e5c80faf8298ae38ec942af97ea216d996328496
+PODFILE CHECKSUM: 6c581d132a42d0190162f8ea26199b704a680077
 
 COCOAPODS: 1.3.0.beta.1

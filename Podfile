@@ -8,7 +8,6 @@ target 'Material' do
     pod 'pop'
     pod 'RETableViewManager'
     pod 'PNChart'
-    pod 'SQLite.swift'
     pod 'Gifu'
     pod 'DynamicButton'
 end

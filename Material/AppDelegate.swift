@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SQLite
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

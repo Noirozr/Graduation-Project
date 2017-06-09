@@ -48,6 +48,7 @@
 		18EDC9F51C84A9F700EBF175 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EDC9F41C84A9F700EBF175 /* StringExtension.swift */; };
 		18FAC1C41C9049A100BC4F46 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FAC1C31C9049A100BC4F46 /* UIViewExtension.swift */; };
 		3BDE5B6DD9A9218B3B6B455B /* Pods_Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 160952CA30E53EAA08CE63F3 /* Pods_Material.framework */; };
+		9474BE241EEA82CF0092E3C0 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9474BE231EEA82CF0092E3C0 /* BrowserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		18FAC1C31C9049A100BC4F46 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		59EDF3F7B1756A4B4FAD974A /* Pods-Material.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Material.release.xcconfig"; path = "Pods/Target Support Files/Pods-Material/Pods-Material.release.xcconfig"; sourceTree = "<group>"; };
 		9456350EF1968A64E3BCCF5F /* Pods-Material.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Material.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Material/Pods-Material.debug.xcconfig"; sourceTree = "<group>"; };
+		9474BE231EEA82CF0092E3C0 /* BrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		E0A2BAAC48A8C9B1E6EFEC0D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -244,6 +246,7 @@
 		189069871C6211840052ECBD /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9474BE221EEA82C30092E3C0 /* Browser */,
 				1871B6731CAB328000FEEC81 /* TPR */,
 				1838255C1C9807120083788F /* Account */,
 				189389981C64A72100DEB455 /* Public */,
@@ -338,6 +341,14 @@
 				160952CA30E53EAA08CE63F3 /* Pods_Material.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9474BE221EEA82C30092E3C0 /* Browser */ = {
+			isa = PBXGroup;
+			children = (
+				9474BE231EEA82CF0092E3C0 /* BrowserViewController.swift */,
+			);
+			path = Browser;
 			sourceTree = "<group>";
 		};
 		B9ED9CDF26939A9E8668480F /* Pods */ = {
@@ -556,6 +567,7 @@
 			files = (
 				1893899F1C64AA8B00DEB455 /* MainPageViewController.swift in Sources */,
 				18EDC9F51C84A9F700EBF175 /* StringExtension.swift in Sources */,
+				9474BE241EEA82CF0092E3C0 /* BrowserViewController.swift in Sources */,
 				183825601C98080C0083788F /* AccountViewController.swift in Sources */,
 				181AE3F21CA9ACE100BC02B8 /* AboutViewController.swift in Sources */,
 				183825521C96D9AD0083788F /* MainPageCollectionViewFlowLayout.swift in Sources */,

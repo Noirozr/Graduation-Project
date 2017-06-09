@@ -19,7 +19,7 @@ class MainPageViewController: MATBaseViewController {
         addNavLeftBtnWithImageName("info_btn_normal", highlightedName: "info_btn_pressed")
         self.title = "HomePage"
         
-        let cellItem1 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("2B76FD"), iconName: "datastruct_icon", name: "Browser")
+        let cellItem1 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("2B76FD"), iconName: "browser_icon", name: "Browser")
         _itemDataArray.append(cellItem1)
         let cellItem2 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("2B76FD"), iconName: "algorithm_icon", name: "Courses")
         _itemDataArray.append(cellItem2)
@@ -80,6 +80,9 @@ extension MainPageViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
+        case 0:
+            let nextVC = BrowserViewController()
+            self.navigationController?.pushViewController(nextVC, animated: true)
         case 2:
             let nextVC = AccountViewController()
             self.navigationController?.pushViewController(nextVC, animated: true)

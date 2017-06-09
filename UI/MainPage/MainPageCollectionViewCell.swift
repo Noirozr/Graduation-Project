@@ -42,7 +42,9 @@ class MainPageCollectionViewCell: UICollectionViewCell {
     }
     //MARK: - Public Methods
     func refreshContentByData(_ data: MainPageCollectionViewCellData) {
-        backgroundColor = data.backgroundColor
+        self.layer.borderColor = data.backgroundColor.cgColor
+        self.layer.borderWidth = 2
+        backgroundColor = UIColor.gray
         kNameLabel.text = data.name
         kImageView.image = UIImage(named: data.iconName)
     }

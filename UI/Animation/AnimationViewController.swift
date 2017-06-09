@@ -8,12 +8,12 @@
 
 import UIKit
 
-class BrowserViewController: MATBaseViewController {
+class AnimationViewController: MATBaseViewController {
     var mainCollectionView: UICollectionView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Browser"
+        self.title = "Animation"
         
         self.p_constructSubviews()
         // Do any additional setup after loading the view.

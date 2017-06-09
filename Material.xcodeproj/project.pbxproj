@@ -42,13 +42,12 @@
 		18C009301CCFC2F2008F93C0 /* algorithm_2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 18C0092B1CCFC2F2008F93C0 /* algorithm_2.pdf */; };
 		18C009311CCFC2F2008F93C0 /* algorithm_3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 18C0092C1CCFC2F2008F93C0 /* algorithm_3.pdf */; };
 		18C009321CCFC2F2008F93C0 /* algorithm_4.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 18C0092D1CCFC2F2008F93C0 /* algorithm_4.pdf */; };
-		18CCA8641CB3FDE100C7727C /* MATDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 18CCA8611CB3F83300C7727C /* MATDB.sqlite */; };
 		18EDC9F01C84A70700EBF175 /* MainPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EDC9EF1C84A70700EBF175 /* MainPageCollectionViewCell.swift */; };
 		18EDC9F31C84A9A100EBF175 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EDC9F21C84A9A100EBF175 /* UIColorExtension.swift */; };
 		18EDC9F51C84A9F700EBF175 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EDC9F41C84A9F700EBF175 /* StringExtension.swift */; };
 		18FAC1C41C9049A100BC4F46 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FAC1C31C9049A100BC4F46 /* UIViewExtension.swift */; };
 		3BDE5B6DD9A9218B3B6B455B /* Pods_Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 160952CA30E53EAA08CE63F3 /* Pods_Material.framework */; };
-		9474BE241EEA82CF0092E3C0 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9474BE231EEA82CF0092E3C0 /* BrowserViewController.swift */; };
+		9474BE271EEA8A2A0092E3C0 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9474BE261EEA8A2A0092E3C0 /* AnimationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,14 +111,13 @@
 		18C0092B1CCFC2F2008F93C0 /* algorithm_2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = algorithm_2.pdf; sourceTree = "<group>"; };
 		18C0092C1CCFC2F2008F93C0 /* algorithm_3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = algorithm_3.pdf; sourceTree = "<group>"; };
 		18C0092D1CCFC2F2008F93C0 /* algorithm_4.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = algorithm_4.pdf; sourceTree = "<group>"; };
-		18CCA8611CB3F83300C7727C /* MATDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MATDB.sqlite; sourceTree = "<group>"; };
 		18EDC9EF1C84A70700EBF175 /* MainPageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageCollectionViewCell.swift; sourceTree = "<group>"; };
 		18EDC9F21C84A9A100EBF175 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		18EDC9F41C84A9F700EBF175 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		18FAC1C31C9049A100BC4F46 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		59EDF3F7B1756A4B4FAD974A /* Pods-Material.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Material.release.xcconfig"; path = "Pods/Target Support Files/Pods-Material/Pods-Material.release.xcconfig"; sourceTree = "<group>"; };
 		9456350EF1968A64E3BCCF5F /* Pods-Material.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Material.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Material/Pods-Material.debug.xcconfig"; sourceTree = "<group>"; };
-		9474BE231EEA82CF0092E3C0 /* BrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
+		9474BE261EEA8A2A0092E3C0 /* AnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		E0A2BAAC48A8C9B1E6EFEC0D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -208,7 +206,6 @@
 				18C0091E1CCFC1E1008F93C0 /* algorithm_pdfs */,
 				189137F31CC965AE00C1484C /* pdfs */,
 				18E0779D1CC53CF700D7D705 /* gifs */,
-				18CCA8611CB3F83300C7727C /* MATDB.sqlite */,
 				181AE3F31CA9C23800BC02B8 /* Assets.xcassets */,
 				189069551C6210530052ECBD /* AppDelegate.swift */,
 				189069591C6210530052ECBD /* Main.storyboard */,
@@ -246,7 +243,7 @@
 		189069871C6211840052ECBD /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				9474BE221EEA82C30092E3C0 /* Browser */,
+				9474BE251EEA8A2A0092E3C0 /* Animation */,
 				1871B6731CAB328000FEEC81 /* TPR */,
 				1838255C1C9807120083788F /* Account */,
 				189389981C64A72100DEB455 /* Public */,
@@ -343,12 +340,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9474BE221EEA82C30092E3C0 /* Browser */ = {
+		9474BE251EEA8A2A0092E3C0 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				9474BE231EEA82CF0092E3C0 /* BrowserViewController.swift */,
+				9474BE261EEA8A2A0092E3C0 /* AnimationViewController.swift */,
 			);
-			path = Browser;
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		B9ED9CDF26939A9E8668480F /* Pods */ = {
@@ -473,7 +470,6 @@
 			files = (
 				189138031CC965AE00C1484C /* 7.pdf in Resources */,
 				18818AF61CC7048D0069ABCE /* 1.gif in Resources */,
-				18CCA8641CB3FDE100C7727C /* MATDB.sqlite in Resources */,
 				18C009301CCFC2F2008F93C0 /* algorithm_2.pdf in Resources */,
 				189137FC1CC965AE00C1484C /* 0.pdf in Resources */,
 				18818AF71CC7048D0069ABCE /* 2.gif in Resources */,
@@ -567,7 +563,7 @@
 			files = (
 				1893899F1C64AA8B00DEB455 /* MainPageViewController.swift in Sources */,
 				18EDC9F51C84A9F700EBF175 /* StringExtension.swift in Sources */,
-				9474BE241EEA82CF0092E3C0 /* BrowserViewController.swift in Sources */,
+				9474BE271EEA8A2A0092E3C0 /* AnimationViewController.swift in Sources */,
 				183825601C98080C0083788F /* AccountViewController.swift in Sources */,
 				181AE3F21CA9ACE100BC02B8 /* AboutViewController.swift in Sources */,
 				183825521C96D9AD0083788F /* MainPageCollectionViewFlowLayout.swift in Sources */,

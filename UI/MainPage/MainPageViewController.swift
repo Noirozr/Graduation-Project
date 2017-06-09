@@ -18,14 +18,15 @@ class MainPageViewController: MATBaseViewController {
         super.viewDidLoad()
         addNavLeftBtnWithImageName("info_btn_normal", highlightedName: "info_btn_pressed")
         self.title = "HomePage"
+        self.view.backgroundColor = UIColor.black
         
-        let cellItem1 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("2B76FD"), iconName: "browser_icon", name: "Browser")
+        let cellItem1 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("2B76FD"), iconName: "browser_icon", name: "Animation")
         _itemDataArray.append(cellItem1)
         let cellItem2 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("2B76FD"), iconName: "algorithm_icon", name: "Courses")
         _itemDataArray.append(cellItem2)
-        let cellItem3 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("2B76FD"), iconName: "account_icon", name: "Social")
+        let cellItem3 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("2B76FD"), iconName: "account_icon", name: "Self")
         _itemDataArray.append(cellItem3)
-        let cellItem4 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("96160B"), iconName: "3rdpr_icon", name: "Local")
+        let cellItem4 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("96160B"), iconName: "3rdpr_icon", name: "Experiment")
         _itemDataArray.append(cellItem4)
         
         p_constructSubviews()
@@ -58,6 +59,8 @@ class MainPageViewController: MATBaseViewController {
         _collectionView = collectionView
     }
     
+//    private func 
+    
 }
 
 //MARK: - UICollectionView Extension
@@ -81,7 +84,7 @@ extension MainPageViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            let nextVC = BrowserViewController()
+            let nextVC = AnimationViewController()
             self.navigationController?.pushViewController(nextVC, animated: true)
         case 2:
             let nextVC = AccountViewController()

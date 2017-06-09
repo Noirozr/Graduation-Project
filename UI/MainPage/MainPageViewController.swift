@@ -25,7 +25,7 @@ class MainPageViewController: MATBaseViewController {
         _itemDataArray.append(cellItem2)
         let cellItem3 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("2B76FD"), iconName: "account_icon", name: "Social")
         _itemDataArray.append(cellItem3)
-        let cellItem4 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("96160B"), iconName: "3rdpr_icon", name: "Storage")
+        let cellItem4 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("96160B"), iconName: "3rdpr_icon", name: "Local")
         _itemDataArray.append(cellItem4)
         
         p_constructSubviews()

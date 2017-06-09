@@ -19,13 +19,13 @@ class MainPageViewController: MATBaseViewController {
         addNavLeftBtnWithImageName("info_btn_normal", highlightedName: "info_btn_pressed")
         self.title = "HomePage"
         
-        let cellItem1 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("2B76FD"), iconName: "datastruct_icon", name: "Data Structures")
+        let cellItem1 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("2B76FD"), iconName: "datastruct_icon", name: "Browser")
         _itemDataArray.append(cellItem1)
-        let cellItem2 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("2B76FD"), iconName: "algorithm_icon", name: "Algorithm")
+        let cellItem2 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("2B76FD"), iconName: "algorithm_icon", name: "Courses")
         _itemDataArray.append(cellItem2)
-        let cellItem3 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("2B76FD"), iconName: "account_icon", name: "ME")
+        let cellItem3 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("2B76FD"), iconName: "account_icon", name: "Social")
         _itemDataArray.append(cellItem3)
-        let cellItem4 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("96160B"), iconName: "3rdpr_icon", name: "Third Party Resources")
+        let cellItem4 = MainPageCollectionViewCellData(backgroundColor: UIColor.fcb_colorWithHexString("96160B"), iconName: "3rdpr_icon", name: "Storage")
         _itemDataArray.append(cellItem4)
         
         p_constructSubviews()
